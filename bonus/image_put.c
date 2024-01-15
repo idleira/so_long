@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:15:35 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/12 17:39:42 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/15 18:17:08 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,12 +79,12 @@ void	put_en(t_vars *vars, int i, int j)
 			x = j * IMG_SIZE;
 			if (vars->map[i][j] == 'V')
 			{
-				mlx_put_image_to_window(vars->mlx, vars->win, vars->m.enemy_img,
+				mlx_put_image_to_window(vars->mlx, vars->win, vars->m.chimken_img,
 					x, y);
-				vars->enemy_x = x;
-				vars->enemy_y = y;
-				vars->enemy_i = i;
-				vars->enemy_j = j;
+				vars->chimken_x = x;
+				vars->chimken_y = y;
+				vars->chimken_i = i;
+				vars->chimken_j = j;
 			}
 			j++;
 		}
@@ -119,7 +119,7 @@ void	put_ce(t_vars *vars, int i, int j)
 	}
 }
 
-void	put_coin(t_vars *vars, int i, int j, int k)
+void	put_egg(t_vars *vars, int i, int j, int k)
 {
 	int	x;
 	int	y;

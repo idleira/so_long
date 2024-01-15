@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:24 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/12 17:39:42 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/15 18:17:08 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	path_finder(int y, int x, t_vars *vars)
 		&& vars->path.imap[y + 1][x] < 1)
 	{
 		if (vars->map[y + 1][x] == 'C')
-			vars->path.collectible_coin++;
+			vars->path.collectible_egg++;
 		vars->path.imap[y + 1][x] = vars->path.imap[y][x] + 1;
 		path_finder(y + 1, x, vars);
 	}
@@ -34,7 +34,7 @@ int	path_up(int y, int x, t_vars *vars)
 		&& vars->path.imap[y - 1][x] < 1)
 	{
 		if (vars->map[y - 1][x] == 'C')
-			vars->path.collectible_coin++;
+			vars->path.collectible_egg++;
 		vars->path.imap[y - 1][x] = vars->path.imap[y][x] + 1;
 		path_finder(y - 1, x, vars);
 	}
@@ -47,7 +47,7 @@ int	path_right(int y, int x, t_vars *vars)
 		&& vars->path.imap[y][x + 1] < 1)
 	{
 		if (vars->map[y][x + 1] == 'C')
-			vars->path.collectible_coin++;
+			vars->path.collectible_egg++;
 		vars->path.imap[y][x + 1] = vars->path.imap[y][x] + 1;
 		path_finder(y, x + 1, vars);
 	}
@@ -60,7 +60,7 @@ int	path_left(int y, int x, t_vars *vars)
 		&& vars->path.imap[y][x - 1] < 1)
 	{
 		if (vars->map[y][x - 1] == 'C')
-			vars->path.collectible_coin++;
+			vars->path.collectible_egg++;
 		vars->path.imap[y][x - 1] = vars->path.imap[y][x] + 1;
 		path_finder(y, x - 1, vars);
 	}

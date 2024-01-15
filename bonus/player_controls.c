@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:05 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/12 17:39:42 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/15 18:18:29 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,24 @@
 
 int	player_move(int keycode, t_vars *vars)
 {
-	if (keycode == 53)
+	if (keycode == ESC)
 		exit(0);
-	if (keycode == 13)
+	if (keycode == W)
 	{
 		move_up(vars);
 		exit_door(vars);
 	}
-	if (keycode == 2)
+	if (keycode == D)
 	{
 		move_right(vars);
 		exit_door(vars);
 	}
-	if (keycode == 1)
+	if (keycode == S)
 	{
 		move_down(vars);
 		exit_door(vars);
 	}
-	if (keycode == 0)
+	if (keycode == A)
 	{
 		move_left(vars);
 		exit_door(vars);

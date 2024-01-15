@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:16:29 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/12 19:00:31 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/15 18:19:56 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	img_load(t_vars *vars)
 			"./images/exit.xpm", &x, &y);
 	vars->m.exit_o_img = mlx_xpm_file_to_image(vars->mlx,
 			"./images/exit_o.xpm", &x, &y);
-	vars->m.enemy_img = mlx_xpm_file_to_image(vars->mlx,
+	vars->m.chimken_img = mlx_xpm_file_to_image(vars->mlx,
 			"./images/chimken.xpm", &x, &y);
 }
 
@@ -53,7 +53,7 @@ void	control(t_vars *vars)
 			|| vars->m.player_back_img == NULL)
 		|| (vars->m.player_left_img == NULL || vars->m.player_right_img == NULL)
 		|| (vars->m.c == NULL || vars->m.e == NULL)
-		|| (vars->m.exit_o_img == NULL || vars->m.enemy_img == NULL))
+		|| (vars->m.exit_o_img == NULL || vars->m.chimken_img == NULL))
 	{
 		ft_printf("\033[0;31merror\ninvalid image!\n");
 		free(vars->m.b);
@@ -64,7 +64,21 @@ void	control(t_vars *vars)
 		free(vars->m.player_right_img);
 		free(vars->m.e);
 		free(vars->m.exit_o_img);
-		free(vars->m.enemy_img);
+		free(vars->m.chimken_img);
+		exit(1);
+	}
+}
+
+void	bonus_control(t_vars *vars)
+{
+	if ((vars->s.cs[0] == NULL || vars->s.cs[1] == NULL)
+		|| (vars->s.cs[2] == NULL || vars->s.cs[3] == NULL))
+	{
+		ft_printf("\033[0;31merror\ninvalid image!\n");
+		free(vars->s.cs[0]);
+		free(vars->s.cs[1]);
+		free(vars->s.cs[2]);
+		free(vars->s.cs[3]);
 		exit(1);
 	}
 }

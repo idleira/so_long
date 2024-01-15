@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:17:20 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/12 17:39:42 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/15 18:17:08 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	move_up(t_vars *vars)
 		if (vars->map[vars->i][vars->j] == 'C')
 		{
 			vars->map[vars->i][vars->j] = '0';
-			vars->collected_coin++;
+			vars->collected_egg++;
 		}
 		ft_printf("\n%d", vars->move_count);
 	}
@@ -62,7 +62,7 @@ void	move_down(t_vars *vars)
 		if (vars->map[vars->i][vars->j] == 'C')
 		{
 			vars->map[vars->i][vars->j] = '0';
-			vars->collected_coin++;
+			vars->collected_egg++;
 		}
 		ft_printf("\n%d", vars->move_count);
 	}
@@ -90,7 +90,7 @@ void	move_right(t_vars *vars)
 		if (vars->map[vars->i][vars->j] == 'C')
 		{
 			vars->map[vars->i][vars->j] = '0';
-			vars->collected_coin++;
+			vars->collected_egg++;
 		}
 		ft_printf("\n%d", vars->move_count);
 	}
@@ -118,7 +118,7 @@ void	move_left(t_vars *vars)
 		if (vars->map[vars->i][vars->j] == 'C')
 		{
 			vars->map[vars->i][vars->j] = '0';
-			vars->collected_coin++;
+			vars->collected_egg++;
 		}
 		ft_printf("\n%d", vars->move_count);
 	}
@@ -128,13 +128,13 @@ void	exit_door(t_vars *vars)
 {
 	if (vars->map[vars->i][vars->j] == 'V')
 	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->m.enemy_img,
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->m.chimken_img,
 			vars->x, vars->y);
 		ft_printf("\nchickens reclaimed their eggs!\n");
 		exit(0);
 	}
 	if (vars->map[vars->i][vars->j] == 'E'
-		&& vars->collected_coin == vars->counts.coin_count)
+		&& vars->collected_egg == vars->counts.egg_count)
 	{
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->m.exit_o_img,
 			vars->x, vars->y);
@@ -142,7 +142,7 @@ void	exit_door(t_vars *vars)
 		exit(0);
 	}
 	else if (vars->map[vars->i][vars->j] == 'E'
-			&& vars->collected_coin != vars->counts.coin_count)
+			&& vars->collected_egg != vars->counts.egg_count)
 	{
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->m.exit_o_img,
 			vars->x, vars->y);
