@@ -6,7 +6,7 @@
 #    By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 19:31:41 by ibeliaie          #+#    #+#              #
-#    Updated: 2024/01/15 16:45:38 by ibeliaie         ###   ########.fr        #
+#    Updated: 2024/01/18 17:37:32 by ibeliaie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ MLXFLAGS = -L/usr/X11/lib -lX11 -lXext -Llibs/mlx -lmlx -Llibs/libft  -Llibs/ft_
 SRCS =	src/counts.c				src/map_checks_1.c				src/player_locate.c				\
 		src/image_put.c				src/map_checks_2.c				src/player_controls.c			\
 		src/image_load.c			src/map_read.c					src/player_controls_util.c		\
-		src/memory_free.c			src/map_read_bonus.c			src/path_find.c					\
+		src/memory_free.c			src/map_read_2.c				src/path_find.c					\
 		src/so_long.c
 
 OBJS = $(SRCS:.c=.o)
@@ -41,7 +41,7 @@ OBJS = $(SRCS:.c=.o)
 BONUS_SRCS = 	bonus/main.c				bonus/map_checks_1.c			bonus/player_locate.c			\
 				bonus/counts.c				bonus/map_checks_2.c			bonus/player_controls.c			\
 				bonus/image_put.c			bonus/map_read.c				bonus/player_controls_util.c	\
-				bonus/image_load.c			bonus/map_read_bonus.c			bonus/animation.c				\
+				bonus/image_load.c			bonus/map_read_2.c			bonus/animation.c				\
 				bonus/memory_free.c			bonus/path_find.c				bonus/chimken.c					\
 				bonus/so_long.c
 

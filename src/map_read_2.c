@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map_read_bonus.c                                   :+:      :+:    :+:   */
+/*   map_read_2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-void	map_read_bonus(t_vars *vars)
+void	map_read_2(t_vars *vars)
 {
 	int	i;
 	int	j;

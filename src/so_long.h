@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/15 18:17:08 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:36:39 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ void			rectangular(t_vars *vars, int i, int j);
 void			control_components(char **map, t_vars *vars);
 void			map_name_control(char *map_name, t_vars *vars);
 void			error_messages(int i, t_vars *vars);
-void			map_read_bonus(t_vars *vars);
+void			map_read_2(t_vars *vars);
 void			player_locate(t_vars *vars);
 void			c_egg(t_vars *vars, int i, int j);
 void			c_player(t_vars *vars, int i, int j);
