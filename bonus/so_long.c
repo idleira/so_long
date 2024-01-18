@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:28 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/18 17:36:39 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:59:31 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,11 @@ int	main(int argc, char **argv)
 	map_read_2(&vars);
 	vars.win = mlx_new_window(vars.mlx, vars.width * IMG_SIZE,
 			vars.len_height * IMG_SIZE, "so_long");
-	mlx_hook (vars.win, 17, 0, press_close_key, &vars);
 	img_load(&vars);
 	control(&vars);
 	put_image(&vars, 0, 0);
-	mlx_hook(vars.win, 2, 0, player_move, &vars);
+	mlx_hook (vars.win, 17, 0, press_close_key, &vars);
+	mlx_hook(vars.win, 2, 1L << 0, player_move, &vars);
 	map_control_dsl(&vars);
 	mlx_loop(vars.mlx);
 }
