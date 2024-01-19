@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:16:29 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/15 16:36:24 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/19 18:08:08 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	control(t_vars *vars)
 		free(vars->m.player_back_img);
 		free(vars->m.player_left_img);
 		free(vars->m.player_right_img);
+		free(vars->m.c);
 		free(vars->m.e);
 		free(vars->m.exit_o_img);
 		free(vars->m.chimken_img);
