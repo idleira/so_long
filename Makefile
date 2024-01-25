@@ -22,7 +22,7 @@ MLX_DIR = libs/mlx
 GNL_DIR = libs/gnl
 LIBFT_DIR = libs/libft
 
-LIBS = $(LIBFT_DIR)/libft.a $(MLX_DIR)/libmlx.a ${GNL_DIR}/libgnl.a
+LIBS = $(LIBFT_DIR)/libft.a $(MLX_DIR)/libmlx_Linux.a ${GNL_DIR}/libgnl.a
 
 CC = @cc
 CFLAGS = -Wall -Wextra -Werror -g -I/usr/X11/include -Ilib/mlx
@@ -55,7 +55,8 @@ clean:
 
 fclean: clean
 	@rm -rf $(NAME)
-	@rm -rf libs/mlx/*.a libs/ft_printf/libft/*.a libs/ft_printf/*.a libs/gnl/*.a
+	@make --no-print-directory -C ${GNL_DIR} fclean
+	@make --no-print-directory -C ${LIBFT_DIR} fclean
 	@echo "$(DEF_COLOR) ૮₍ •⤙•˶| $(YELLOW)𝕗𝕦𝕝𝕝 𝕔𝕝𝕖𝕒𝕟-𝕦𝕡 𝕔𝕠𝕞𝕡𝕝𝕖𝕥𝕖$(DEF_COLOR)ˎˊ˗"
 
 re: fclean all
