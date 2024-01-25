@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:07:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/12 18:57:55 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/25 17:40:33 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ char	*gnl(int fd)
 	if (!left_str)
 		return (NULL);
 	line = ft_get_line(left_str);
+	free(left_str);
 	left_str = ft_new_left_str(left_str);
 	return (line);
 }
