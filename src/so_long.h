@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/18 17:36:39 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:02:39 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,11 @@ typedef struct s_counts
 	int			egg_count;
 	int			player_count;
 	int			exit_count;
-	int			chimken_count;
 }				t_counts;
 
 typedef struct	s_path
 {
 	int			collectible_egg;
-	int			spaces;
 	int			**imap;
 }				t_path;
 
@@ -51,7 +49,6 @@ typedef struct s_images
 	char		*player_left_img;
 	char		*player_right_img;
 	char		*c;
-	char		*chimken_img;
 }				t_images;
 
 typedef struct s_vars
@@ -65,17 +62,8 @@ typedef struct s_vars
 	void		*win;
 	int			width;
 	int			len_height;
-	int			map_height;
-	int			map_width;
 	int			move_count;
 	int			collected_egg;
-	int			chimken_x;
-	int			chimken_y;
-	int			chimken_i;
-	int			chimken_j;
-	int			chimkenspeed;
-	int			eggspeed;
-	char		*mover;
 	int			y;
 	int			x;
 	int			i;
@@ -91,10 +79,7 @@ void			move_up(t_vars *vars);
 void			move_down(t_vars *vars);
 void			move_right(t_vars *vars);
 void			move_left(t_vars *vars);
-void			put_image(t_vars *vars, int i, int j);
 void			put_pl(t_vars *vars, int i, int j);
-void			put_en(t_vars *vars, int i, int j);
-void			put_ce(t_vars *vars, int i, int j);
 void			map_control_dsl(t_vars *vars);
 void			mapfree_control(t_vars *vars);
 void			rectangular(t_vars *vars, int i, int j);
