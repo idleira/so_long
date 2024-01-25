@@ -6,7 +6,7 @@
 #    By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 17:10:01 by ibeliaie          #+#    #+#              #
-#    Updated: 2024/01/12 18:59:35 by ibeliaie         ###   ########.fr        #
+#    Updated: 2024/01/25 17:40:04 by ibeliaie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,6 @@ AR = @ar rcs
 
 all: $(NAME)
 
-$(NAME):
 $(NAME): $(OBJ)
 	@$(MAKE) -C ../ft_printf
 	@cp ../ft_printf/libftprintf.a $(NAME)
