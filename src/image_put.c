@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:15:35 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/25 15:59:51 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:57:20 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ void	put_pl(t_vars *vars, int i, int j)
 		}
 		i++;
 	}
+	put_egg(vars, 0, 0);
 }
 
 void	put_egg(t_vars *vars, int i, int j)
@@ -79,6 +80,29 @@ void	put_egg(t_vars *vars, int i, int j)
 			if (vars->map[i][j] == 'C')
 			{
 				mlx_put_image_to_window(vars->mlx, vars->win, vars->m.c, x, y);
+			}
+			j++;
+		}
+		i++;
+	}
+	put_exit(vars, 0, 0);
+}
+
+void	put_exit(t_vars *vars, int i, int j)
+{
+	int	x;
+	int	y;
+
+	while (vars->map[i])
+	{
+		y = i * IMG_SIZE;
+		j = 0;
+		while (vars->map[i][j] != '\0' && vars->map[i][j] != '\n')
+		{
+			x = j * IMG_SIZE;
+			if (vars->map[i][j] == 'E')
+			{
+				mlx_put_image_to_window(vars->mlx, vars->win, vars->m.e, x, y);
 			}
 			j++;
 		}
