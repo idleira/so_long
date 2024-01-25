@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/25 16:02:39 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/25 16:56:27 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ void			move_down(t_vars *vars);
 void			move_right(t_vars *vars);
 void			move_left(t_vars *vars);
 void			put_pl(t_vars *vars, int i, int j);
+void			put_egg(t_vars *vars, int i, int j);
+void			put_exit(t_vars *vars, int i, int j);
 void			map_control_dsl(t_vars *vars);
 void			mapfree_control(t_vars *vars);
 void			rectangular(t_vars *vars, int i, int j);
