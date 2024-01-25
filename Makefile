@@ -6,7 +6,7 @@
 #    By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 19:31:41 by ibeliaie          #+#    #+#              #
-#    Updated: 2024/01/25 15:58:23 by ibeliaie         ###   ########.fr        #
+#    Updated: 2024/01/25 19:49:39 by ibeliaie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,12 +51,13 @@ $(NAME): $(OBJS)
 clean:
 	@rm -rf $(OBJS)
 	@rm -f main/*.o
-	@rm -f libs/mlx/*.o libs/ft_printf/libft/*.o libs/ft_printf/*.o libs/gnl/*.o
+	@rm -f libs/mlx/obj/*.o  libs/libft/*.o libs/ft_printf/*.o libs/gnl/*.o
 
 fclean: clean
 	@rm -rf $(NAME)
 	@make --no-print-directory -C ${GNL_DIR} fclean
 	@make --no-print-directory -C ${LIBFT_DIR} fclean
+	@rm -f libs/mlx/libmlx_Linux.a libs/mlx/libmlx.a libs/libft/libft.a libs/ft_printf/libftprintf.a libs/gnl/libgnl.a
 	@echo "$(DEF_COLOR) ૮₍ •⤙•˶| $(YELLOW)𝕗𝕦𝕝𝕝 𝕔𝕝𝕖𝕒𝕟-𝕦𝕡 𝕔𝕠𝕞𝕡𝕝𝕖𝕥𝕖$(DEF_COLOR)ˎˊ˗"
 
 re: fclean all
