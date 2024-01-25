@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:17:20 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/15 18:17:08 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/25 15:58:44 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,13 +126,6 @@ void	move_left(t_vars *vars)
 
 void	exit_door(t_vars *vars)
 {
-	if (vars->map[vars->i][vars->j] == 'V')
-	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->m.chimken_img,
-			vars->x, vars->y);
-		ft_printf("\nchickens reclaimed their eggs!\n");
-		exit(0);
-	}
 	if (vars->map[vars->i][vars->j] == 'E'
 		&& vars->collected_egg == vars->counts.egg_count)
 	{

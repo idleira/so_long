@@ -18,8 +18,6 @@ int	counts(t_vars *vars)
 	vars->counts.egg_count = 0;
 	vars->counts.player_count = 0;
 	vars->counts.exit_count = 0;
-	vars->counts.chimken_count = 0;
-	vars->path.spaces = 0;
 	vars->collected_egg = 0;
 	vars->move_count = 0;
 	c_egg(vars, 0, 0);
