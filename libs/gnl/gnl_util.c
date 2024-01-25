@@ -108,6 +108,5 @@ char	*ft_new_left_str(char *left_str)
 	while (left_str[i])
 		str[j++] = left_str[i++];
 	str[j] = '\0';
-	free(left_str);
 	return (str);
 }
