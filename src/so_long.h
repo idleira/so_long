@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/25 16:56:27 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/27 19:21:29 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@
 
 typedef struct s_counts
 {
-	int			egg_count;
-	int			player_count;
-	int			exit_count;
+	int			count_eggs;
+	int			count_player;
+	int			count_exit;
 }				t_counts;
 
 typedef struct	s_path
@@ -70,37 +70,48 @@ typedef struct s_vars
 	int			j;
 }				t_vars;
 
+int				counts(t_vars *vars);
 void			exit_door(t_vars *vars);
-void			map_read(t_vars *vars);
-void			put_image(t_vars *vars, int i, int j);
 void			upload(t_vars *vars);
-void			img_load(t_vars *vars);
+void			load_images(t_vars *vars);
+
 void			move_up(t_vars *vars);
 void			move_down(t_vars *vars);
 void			move_right(t_vars *vars);
 void			move_left(t_vars *vars);
-void			put_pl(t_vars *vars, int i, int j);
-void			put_egg(t_vars *vars, int i, int j);
-void			put_exit(t_vars *vars, int i, int j);
-void			map_control_dsl(t_vars *vars);
-void			mapfree_control(t_vars *vars);
-void			rectangular(t_vars *vars, int i, int j);
-void			control_components(char **map, t_vars *vars);
-void			map_name_control(char *map_name, t_vars *vars);
-void			error_messages(int i, t_vars *vars);
-void			map_read_2(t_vars *vars);
 void			player_locate(t_vars *vars);
-void			c_egg(t_vars *vars, int i, int j);
-void			c_player(t_vars *vars, int i, int j);
-void			c_exit(t_vars *vars, int i, int j);
+
+void			put_images(t_vars *vars, int i, int j);
+void			put_player(t_vars *vars, int i, int j);
+void			put_eggs(t_vars *vars, int i, int j);
+void			put_exit(t_vars *vars, int i, int j);
+
+void			control(t_vars *vars);
+
+void 			error_exit(const char *message);
+void			validate_map_name(char *map_name);
+void 			validate_map_free(t_vars *vars);
+void			validate_map_rectangular(t_vars *vars);
+void			validate_map_components(char **map);
+void			map_control(t_vars *vars);
+
+void			map_read_check(t_vars *vars);
+void			map_read(t_vars *vars);
+void			map_read_2(t_vars *vars);
+
+void			count_eggs(t_vars *vars, int i, int j);
+void			count_player(t_vars *vars, int i, int j);
+void			count_exit(t_vars *vars, int i, int j);
+
 void			free_imap(t_vars *vars);
 void			free_map(t_vars *vars);
 void			free_exit(t_vars *vars);
 void			free_wrong(t_vars *vars);
 void			free_mapfree(t_vars *vars);
+
 void			error_center_top_down();
 void			error_center_left_right();
-void			control(t_vars *vars);
+void			error_messages(int i, t_vars *vars);
 
 int				path_up(int y, int x, t_vars *vars);
 int				path_right(int y, int x, t_vars *vars);
@@ -108,9 +119,7 @@ int				path_left(int y, int x, t_vars *vars);
 
 int				vertical_len(char *map_name);
 int				horizontal_len(t_vars *vars);
-int				map_control(t_vars *vars);
 int				player_move(int keycode, t_vars *vars);
-int				counts(t_vars *vars);
 int				path_finder(int y, int x, t_vars *vars);
 int				press_close_key(t_vars *vars);
 

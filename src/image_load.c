@@ -6,13 +6,13 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:16:29 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/25 15:58:44 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/27 17:37:53 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	img_load(t_vars *vars)
+void	load_images(t_vars *vars)
 {
 	int	x;
 	int	y;
@@ -37,6 +37,7 @@ void	img_load(t_vars *vars)
 			"./images/exit.xpm", &x, &y);
 	vars->m.exit_o_img = mlx_xpm_file_to_image(vars->mlx,
 			"./images/exit_o.xpm", &x, &y);
+	control(vars);
 }
 
 void	upload(t_vars *vars)

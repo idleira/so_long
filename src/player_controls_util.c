@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:17:20 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/25 15:58:44 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/27 17:35:46 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,7 +127,7 @@ void	move_left(t_vars *vars)
 void	exit_door(t_vars *vars)
 {
 	if (vars->map[vars->i][vars->j] == 'E'
-		&& vars->collected_egg == vars->counts.egg_count)
+		&& vars->collected_egg == vars->counts.count_eggs)
 	{
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->m.exit_o_img,
 			vars->x, vars->y);
@@ -135,7 +135,7 @@ void	exit_door(t_vars *vars)
 		exit(0);
 	}
 	else if (vars->map[vars->i][vars->j] == 'E'
-			&& vars->collected_egg != vars->counts.egg_count)
+			&& vars->collected_egg != vars->counts.count_eggs)
 	{
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->m.exit_o_img,
 			vars->x, vars->y);

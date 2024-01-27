@@ -22,7 +22,7 @@ MLX_DIR = libs/mlx
 GNL_DIR = libs/gnl
 LIBFT_DIR = libs/libft
 
-LIBS = $(LIBFT_DIR)/libft.a $(MLX_DIR)/libmlx_Linux.a ${GNL_DIR}/libgnl.a
+LIBS = $(LIBFT_DIR)/libft.a $(MLX_DIR)/libmlx.a ${GNL_DIR}/libgnl.a
 
 CC = @cc
 CFLAGS = -Wall -Wextra -Werror -g -I/usr/X11/include -Ilib/mlx

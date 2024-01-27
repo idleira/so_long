@@ -6,13 +6,13 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:15:35 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/25 16:57:20 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/27 17:38:55 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	put_image(t_vars *vars, int i, int j)
+void	put_images(t_vars *vars, int i, int j)
 {
 	int	x;
 	int	y;
@@ -36,10 +36,10 @@ void	put_image(t_vars *vars, int i, int j)
 		}
 		i++;
 	}
-	put_pl(vars, 0, 0);
+	put_player(vars, 0, 0);
 }
 
-void	put_pl(t_vars *vars, int i, int j)
+void	put_player(t_vars *vars, int i, int j)
 {
 	int	x;
 	int	y;
@@ -62,10 +62,10 @@ void	put_pl(t_vars *vars, int i, int j)
 		}
 		i++;
 	}
-	put_egg(vars, 0, 0);
+	put_eggs(vars, 0, 0);
 }
 
-void	put_egg(t_vars *vars, int i, int j)
+void	put_eggs(t_vars *vars, int i, int j)
 {
 	int	x;
 	int	y;

@@ -17,11 +17,11 @@ void	map_read_2(t_vars *vars)
 	int	i;
 	int	j;
 
-	i = 0;
 	vars->path.imap = (int **)malloc(sizeof(int *) * (vars->len_height + 1));
+	i = 0;
 	while (i < vars->len_height)
 	{
-		vars->path.imap[i] = malloc(sizeof(int) * (vars->width + 1));
+		vars->path.imap[i] = (int *)malloc(sizeof(int) * (vars->width + 1));
 		j = 0;
 		while (j < vars->width)
 		{
@@ -31,8 +31,22 @@ void	map_read_2(t_vars *vars)
 				vars->path.imap[i][j] = 0;
 			j++;
 		}
-		vars->path.imap[i][j] = '\0';
+		vars->path.imap[i][vars->width] = '\0';
 		i++;
 	}
-	vars->path.imap[i] = NULL;
+	vars->path.imap[vars->len_height] = NULL;
+	map_read_check(vars);
+}
+
+void	map_read_check(t_vars *vars)
+{
+	int	i;
+
+	i = 0;
+	while (vars->map[i] != NULL)
+	{
+		free(vars->map[i]);
+		i++;
+	}
+	free(vars->map);
 }
