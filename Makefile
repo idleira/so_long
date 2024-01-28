@@ -6,7 +6,7 @@
 #    By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 19:31:41 by ibeliaie          #+#    #+#              #
-#    Updated: 2024/01/25 19:49:39 by ibeliaie         ###   ########.fr        #
+#    Updated: 2024/01/28 17:50:30 by ibeliaie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ MLX_DIR = libs/mlx
 GNL_DIR = libs/gnl
 LIBFT_DIR = libs/libft
 
-LIBS = $(LIBFT_DIR)/libft.a $(MLX_DIR)/libmlx_Linux.a ${GNL_DIR}/libgnl.a
+LIBS = $(LIBFT_DIR)/libft.a $(MLX_DIR)/libmlx.a ${GNL_DIR}/libgnl.a
 
 CC = @cc
 CFLAGS = -Wall -Wextra -Werror -g -I/usr/X11/include -Ilib/mlx

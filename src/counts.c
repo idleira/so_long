@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:45:25 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/15 18:17:08 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/28 18:06:48 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	counts(t_vars *vars)
 {
 	vars->path.collectible_egg = 0;
-	vars->counts.egg_count = 0;
+	vars->counts.count_eggs = 0;
 	vars->counts.player_count = 0;
 	vars->counts.exit_count = 0;
 	vars->collected_egg = 0;
@@ -35,7 +35,7 @@ void	c_egg(t_vars *vars, int i, int j)
 		while (vars->map[i][j] != '\0' && vars->map[i][j] != '\n')
 		{
 			if (vars->map[i][j] == 'C')
-				vars->counts.egg_count++;
+				vars->counts.count_eggs++;
 			j++;
 		}
 		i++;

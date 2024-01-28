@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/25 16:56:27 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/28 18:29:26 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 
 typedef struct s_counts
 {
-	int			egg_count;
+	int			count_eggs;
 	int			player_count;
 	int			exit_count;
 }				t_counts;
@@ -70,6 +70,13 @@ typedef struct s_vars
 	int			j;
 }				t_vars;
 
+void			error_exit(const char *message);
+void			validate_map_free(t_vars *vars);
+void			validate_map_name(char *map_name);
+void			validate_map_edges(t_vars *vars);
+void			validate_map_components(char **map);
+void			validate_map_rectangular(t_vars *vars);
+
 void			exit_door(t_vars *vars);
 void			map_read(t_vars *vars);
 void			put_image(t_vars *vars, int i, int j);
@@ -83,10 +90,6 @@ void			put_pl(t_vars *vars, int i, int j);
 void			put_egg(t_vars *vars, int i, int j);
 void			put_exit(t_vars *vars, int i, int j);
 void			map_control_dsl(t_vars *vars);
-void			mapfree_control(t_vars *vars);
-void			rectangular(t_vars *vars, int i, int j);
-void			control_components(char **map, t_vars *vars);
-void			map_name_control(char *map_name, t_vars *vars);
 void			error_messages(int i, t_vars *vars);
 void			map_read_2(t_vars *vars);
 void			player_locate(t_vars *vars);
