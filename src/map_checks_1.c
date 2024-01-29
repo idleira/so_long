@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:38:32 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/28 18:43:02 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/29 18:03:05 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,28 +66,29 @@ void validate_map_components(char **map)
     }
 }
 
-void validate_map_rectangular(t_vars *vars)
+void validate_map_rectangular(t_vars *vars, int i, int j)
 {
-    int area;
-    int count;
-	int i;
-	int j;
-	
-	area = vars->len_height * vars->width;
-	count = 0;
-	i = 0;
-    while (vars->map[i])
+	int	area;
+	int	count;
+
+	area = (vars->height) * (vars->width);
+    ft_printf("area: %d\n", area);
+    count = 0;
+	while (vars->map[i])
 	{
-        j = 0;
-        while (vars->map[i][j] != '\0' && vars->map[i][j] != '\n')
+		j = 0;
+		while (vars->map[i][j] != '\0' && vars->map[i][j] != '\n')
 		{
-            if (vars->map[i][j] == '0' || vars->map[i][j] == '1' || vars->map[i][j] == 'P' ||
-				vars->map[i][j] == 'C' || vars->map[i][j] == 'E') 
-                count++;
-            j++;
-        }
-        i++;
-    }
-    if (count != area)
-        error_exit("map has to be rectangular.\n");
+			if (vars->map[i][j] == '0' || vars->map[i][j] == '1' ||
+				vars->map[i][j] == 'P' || vars->map[i][j] == 'C'
+				|| vars->map[i][j] == 'E')
+				count++;
+			j++;
+		}
+		i++;
+	}
+	if (count != area)
+	{
+		error_exit("map has to be rectangular.\n");
+	}
 }

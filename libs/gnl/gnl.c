@@ -6,47 +6,106 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:07:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/25 19:44:01 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/29 17:13:20 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "gnl.h"
 
-char	*ft_read_to_left_str(int fd, char *left_str)
+char	*gnl_save(char *buff)
+{
+	char	*save;
+	int		i;
+	int		j;
+
+	i = gnl_findnl(buff);
+	if (i == -1 || !buff[i])
+	{
+		free(buff);
+		return (NULL);
+	}
+	save = gnl_calloc(gnl_strlen(buff, '\0') - i + 2, sizeof(char));
+	j = 0;
+	if (gnl_findnl(buff) >= 0)
+	{
+		while (buff[i] != '\n')
+		{
+			i++;
+		}
+		i++;
+	}
+	while (buff[i])
+		save[j++] = buff[i++];
+	free(buff);
+	return (save);
+}
+
+char	*gnl_retline(char *line)
+{
+	char	*r;
+	int		i;
+
+	if (!*line)
+		return (NULL);
+	r = gnl_calloc(gnl_strlen(line, '\n') + 2, sizeof(char));
+	i = 0;
+	while (line[i] && line[i] != '\n')
+	{
+		r[i] = line[i];
+		i++;
+	}
+	if (line[i] && line[i] == '\n')
+		r[i++] = '\n';
+	r[i] = '\0';
+	return (r);
+}
+
+char	*gnl_read(int fd, char *line)
 {
 	char	*buff;
-	int		rd_bytes;
+	int		bytes_read;
 
-	buff = malloc((BUFFER_SIZE + 1) * sizeof(char));
+	if (!line)
+		line = gnl_calloc(1, sizeof(char));
+	buff = gnl_calloc(BUFFER_SIZE + 1, sizeof(char));
 	if (!buff)
 		return (NULL);
-	rd_bytes = 1;
-	while (!ft_gnl_strchr(left_str, '\n') && rd_bytes != 0)
+	bytes_read = 1;
+	while (bytes_read > 0 && gnl_findnl(buff) < 0)
 	{
-		rd_bytes = read(fd, buff, BUFFER_SIZE);
-		if (rd_bytes == -1)
+		bytes_read = read(fd, buff, BUFFER_SIZE);
+		if (bytes_read == -1)
 		{
 			free(buff);
+			free(line);
+			buff = NULL;
 			return (NULL);
 		}
-		buff[rd_bytes] = '\0';
-		left_str = ft_gnl_strjoin(left_str, buff);
+		buff[bytes_read] = '\0';
+		line = gnl_join(line, buff);
 	}
 	free(buff);
-	return (left_str);
+	return (line);
 }
 
 char	*gnl(int fd)
 {
-	char		*line;
-	static char	*left_str;
+	static char	*buff;
+	char		*r;
 
-	if (fd < 0 || BUFFER_SIZE <= 0)
+	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
+	{
+		if (buff)
+		{
+			free(buff);
+			buff = NULL;
+		}
 		return (NULL);
-	left_str = ft_read_to_left_str(fd, left_str);
-	if (!left_str)
+	}
+	buff = gnl_read(fd, buff);
+	if (!buff)
 		return (NULL);
-	line = ft_get_line(left_str);
-	left_str = ft_new_left_str(left_str);
-	return (line);
+	r = gnl_retline(buff);
+	buff = gnl_save(buff);
+	return (r);
 }

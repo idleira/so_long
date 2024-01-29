@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:10 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/25 15:58:44 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/29 15:49:01 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	free_imap(t_vars *vars)
 	int	i;
 
 	i = 0;
-	while (i < vars->len_height)
+	while (i < vars->height)
 	{
 		free(vars->path.imap[i]);
 		i++;
@@ -30,7 +30,7 @@ void	free_map(t_vars *vars)
 	int	i;
 
 	i = 0;
-	while (i < vars->len_height)
+	while (i < vars->height)
 	{
 		free(vars->map[i]);
 		i++;
@@ -42,15 +42,14 @@ void	free_exit(t_vars *vars)
 {
 	free_imap(vars);
 	free_map(vars);
-	mlx_destroy_image(vars->mlx, vars->m.b);
-	mlx_destroy_image(vars->mlx, vars->m.c);
-	mlx_destroy_image(vars->mlx, vars->m.e);
-	mlx_destroy_image(vars->mlx, vars->m.exit_o_img);
-	mlx_destroy_image(vars->mlx, vars->m.player_left_img);
-	mlx_destroy_image(vars->mlx, vars->m.player_right_img);
+	mlx_destroy_image(vars->mlx, vars->m.floor);
+	mlx_destroy_image(vars->mlx, vars->m.egg);
+	mlx_destroy_image(vars->mlx, vars->m.exit);
+	mlx_destroy_image(vars->mlx, vars->m.player_left);
+	mlx_destroy_image(vars->mlx, vars->m.player_right);
 	mlx_destroy_image(vars->mlx, vars->m.player_img);
-	mlx_destroy_image(vars->mlx, vars->m.player_back_img);
-	mlx_destroy_image(vars->mlx, vars->m.w);
+	mlx_destroy_image(vars->mlx, vars->m.player_back);
+	mlx_destroy_image(vars->mlx, vars->m.wall);
 	mlx_destroy_window(vars->mlx, vars->win);
 }
 
