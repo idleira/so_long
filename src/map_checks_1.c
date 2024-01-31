@@ -6,74 +6,75 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:38:32 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/29 18:03:05 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:17:43 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void error_exit(const char *message)
+void	error_exit(const char *message)
 {
-    ft_printf("\033[0;31merror\n%s\n", message);
-    exit(1);
+	ft_printf("\033[0;31merror\n%s\n", message);
+	exit(1);
 }
 
-void validate_map_name(char *map_name)
+void	validate_map_name(char *map_name)
 {
-    int len;
+	int	len;
 	int	i;
-	
+
 	len = ft_strlen(map_name);
-    if (len < 5)
+	if (len < 5)
 	{
 		i = ft_strncmp(map_name + len - 4, ".ber", 4);
 		if (i != 0)
-        	error_exit("invalid map file name\n");	
+			error_exit("invalid map file name\n");
 	}
 }
 
-void validate_map_free(t_vars *vars)
+void	validate_map_free(t_vars *vars)
 {
-    int fd;
-    char *tmp;
+	int		fd;
+	char	*tmp;
 
 	fd = open(vars->map_name, O_RDONLY);
 	tmp = gnl(fd);
-    if (tmp == NULL)
-        error_exit("wrong or empty map\n");
-    free(tmp);
+	if (tmp == NULL)
+		error_exit("wrong or empty map\n");
+	free(tmp);
 }
 
-void validate_map_components(char **map)
+void	validate_map_components(char **map)
 {
-    int i;
-	int j;
-	
+	int	i;
+	int	j;
+
 	i = 0;
-    while (map[i])
+	while (map[i])
 	{
-        j = 0;
-        while (map[i][j] != '\0' && map[i][j] != '\n')
+		j = 0;
+		while (map[i][j] != '\0' && map[i][j] != '\n')
 		{
 			if (map[i][j] == '0' || map[i][j] == '1' || map[i][j] == 'P' ||
 				map[i][j] == 'C' || map[i][j] == 'E')
 					;
 			else
-                error_exit("invalid map components. only 0, 1, P, C, E allowed\n");
-            j++;
-        }
-        i++;
-    }
+				error_exit("invalid map components. \
+							only 0, 1, P, C, E allowed\n");
+			j++;
+		}
+		i++;
+	}
 }
 
-void validate_map_rectangular(t_vars *vars, int i, int j)
+void	validate_map_rectangular(t_vars *vars, int i, int j)
 {
 	int	area;
 	int	count;
 
 	area = (vars->height) * (vars->width);
-    ft_printf("area: %d\n", area);
-    count = 0;
+	ft_printf("area: %d\n", area);
+	count = 0;
 	while (vars->map[i])
 	{
 		j = 0;

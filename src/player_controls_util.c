@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:17:20 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 18:00:26 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:06:58 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,21 +124,9 @@ void	move_left(t_vars *vars)
 	}
 }
 
-void	check_exit_door(t_vars *vars)
+int	press_esc(t_vars *vars)
 {
-	if (vars->map[vars->i][vars->j] == 'E'
-		&& vars->collected == vars->counts.count_eggs)
-	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->m.exit,
-			vars->x, vars->y);
-		ft_printf("\nyou win!\n");
-		exit(0);
-	}
-	else if (vars->map[vars->i][vars->j] == 'E'
-			&& vars->collected != vars->counts.count_eggs)
-	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->m.exit,
-			vars->x, vars->y);
-		ft_printf("\nyou have to get all the eggs before you go");
-	}
+	ft_printf("\n\033[0;35mgame over!\033[0m\n");
+	free_exit(vars);
+	exit(1);
 }

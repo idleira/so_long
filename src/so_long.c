@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:28 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 17:44:57 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:20:20 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,7 @@ int	main(int argc, char **argv)
 	img_load(&vars);
 	img_control(&vars);
 	put_wall_floor(&vars, 0, 0);
-	mlx_hook (vars.win, 17, 0, exit_esc, &vars);
+	mlx_hook (vars.win, 17, 0, press_esc, &vars);
 	mlx_hook(vars.win, 2, 1L << 0, player_move, &vars);
 	mlx_loop(vars.mlx);
-}
-
-int	exit_esc(t_vars *vars)
-{
-	ft_printf("\n\033[0;35mgame over!\033[0m\n");
-	free_exit(vars);
-	exit(1);
 }

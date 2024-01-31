@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 18:01:12 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:26:36 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_counts
 	int			exit_count;
 }				t_counts;
 
-typedef struct	s_path
+typedef struct s_path
 {
 	int			collectible_egg;
 	int			**imap;
@@ -76,8 +76,6 @@ void			validate_map_components(char **map);
 void			validate_map_rectangular(t_vars *vars, int i, int j);
 int				validate_map_border(t_vars *vars);
 
-void			error_center_top_down();
-void			error_center_left_right();
 void			error_exit(const char *message);
 
 void			map_read(t_vars *vars);
@@ -89,7 +87,7 @@ void			map_dimensions(t_vars *vars);
 
 int				count_all(t_vars *vars);
 void			count_elements(t_vars *vars, int i, int j);
-void    		count_extra(t_vars *vars);
+void			count_extra(t_vars *vars);
 
 void			put_wall_floor(t_vars *vars, int i, int j);
 void			put_player(t_vars *vars, int i, int j);
@@ -101,16 +99,15 @@ void			move_down(t_vars *vars);
 void			move_left(t_vars *vars);
 void			move_right(t_vars *vars);
 int				player_move(int keycode, t_vars *vars);
-int				exit_esc(t_vars *vars);
+int				press_esc(t_vars *vars);
 
-void			check_exit_door(t_vars *vars);
+void			check_exit(t_vars *vars);
 void			player_locate(t_vars *vars);
 
 void			free_imap(t_vars *vars);
 void			free_map(t_vars *vars);
 void			free_exit(t_vars *vars);
 void			free_wrong(t_vars *vars);
-
 
 void			img_load(t_vars *vars);
 void			img_control(t_vars *vars);
@@ -119,6 +116,5 @@ int				path_up(int y, int x, t_vars *vars);
 int				path_right(int y, int x, t_vars *vars);
 int				path_left(int y, int x, t_vars *vars);
 int				path_finder(int y, int x, t_vars *vars);
-
 
 #endif

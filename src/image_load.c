@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:16:29 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/29 18:11:49 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:25:13 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	img_load(t_vars *vars)
 
 	x = vars->width * IMG_SIZE;
 	y = vars->height * IMG_SIZE;
-	vars->m.floor = mlx_xpm_file_to_image(vars->mlx, "./images/dirt.xpm",
-					&x, &y);
+	vars->m.floor = mlx_xpm_file_to_image(vars->mlx,
+			"./images/dirt.xpm", &x, &y);
 	vars->m.wall = mlx_xpm_file_to_image(vars->mlx,
 			"./images/grass.xpm", &x, &y);
 	vars->m.player_img = mlx_xpm_file_to_image(vars->mlx,
@@ -39,8 +39,8 @@ void	img_load(t_vars *vars)
 
 void	img_control(t_vars *vars)
 {
-	if ((vars->m.floor == NULL || vars->m.wall == NULL) || (vars->m.player_img == NULL
-			|| vars->m.player_back == NULL)
+	if ((vars->m.floor == NULL || vars->m.wall == NULL)
+		|| (vars->m.player_img == NULL || vars->m.player_back == NULL)
 		|| (vars->m.player_left == NULL || vars->m.player_right == NULL)
 		|| (vars->m.egg == NULL || vars->m.exit == NULL))
 	{

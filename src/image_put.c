@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:15:35 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/29 15:49:01 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:25:54 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,13 @@ void	put_wall_floor(t_vars *vars, int i, int j)
 			x = j * IMG_SIZE;
 			if (vars->map[i][j] == '1')
 			{
-				mlx_put_image_to_window(vars->mlx, vars->win, vars->m.wall, x, y);
+				mlx_put_image_to_window(vars->mlx, vars->win,
+					vars->m.wall, x, y);
 			}
 			else if (vars->map[i][j] == '0')
 			{
-				mlx_put_image_to_window(vars->mlx, vars->win, vars->m.floor, x, y);
+				mlx_put_image_to_window(vars->mlx, vars->win,
+					vars->m.floor, x, y);
 			}
 			j++;
 		}
@@ -79,7 +81,8 @@ void	put_egg(t_vars *vars, int i, int j)
 			x = j * IMG_SIZE;
 			if (vars->map[i][j] == 'C')
 			{
-				mlx_put_image_to_window(vars->mlx, vars->win, vars->m.egg, x, y);
+				mlx_put_image_to_window(vars->mlx, vars->win,
+					vars->m.egg, x, y);
 			}
 			j++;
 		}
@@ -102,7 +105,8 @@ void	put_exit(t_vars *vars, int i, int j)
 			x = j * IMG_SIZE;
 			if (vars->map[i][j] == 'E')
 			{
-				mlx_put_image_to_window(vars->mlx, vars->win, vars->m.exit, x, y);
+				mlx_put_image_to_window(vars->mlx, vars->win,
+					vars->m.exit, x, y);
 			}
 			j++;
 		}
