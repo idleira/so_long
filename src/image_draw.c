@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   image_put.c                                        :+:      :+:    :+:   */
+/*   image_draw.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:15:35 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 19:46:10 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:57:11 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	put_wall_floor(t_vars *vars, int i, int j)
+void	draw_background(t_vars *vars, int i, int j)
 {
 	int	x;
 	int	y;
@@ -38,10 +38,9 @@ void	put_wall_floor(t_vars *vars, int i, int j)
 		}
 		i++;
 	}
-	put_player(vars, 0, 0);
 }
 
-void	put_player(t_vars *vars, int i, int j)
+void	draw_player(t_vars *vars, int i, int j)
 {
 	int	x;
 	int	y;
@@ -64,10 +63,9 @@ void	put_player(t_vars *vars, int i, int j)
 		}
 		i++;
 	}
-	put_egg(vars, 0, 0);
 }
 
-void	put_egg(t_vars *vars, int i, int j)
+void	draw_egg(t_vars *vars, int i, int j)
 {
 	int	x;
 	int	y;
@@ -88,10 +86,9 @@ void	put_egg(t_vars *vars, int i, int j)
 		}
 		i++;
 	}
-	put_exit(vars, 0, 0);
 }
 
-void	put_exit(t_vars *vars, int i, int j)
+void	draw_exit(t_vars *vars, int i, int j)
 {
 	int	x;
 	int	y;
@@ -112,4 +109,12 @@ void	put_exit(t_vars *vars, int i, int j)
 		}
 		i++;
 	}
+}
+
+void	draw_images(t_vars	*vars)
+{
+	draw_background(vars, 0, 0);
+	draw_player(vars, 0, 0);
+	draw_egg(vars, 0, 0);
+	draw_exit(vars, 0, 0);
 }

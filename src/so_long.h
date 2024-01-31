@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 19:47:49 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:55:34 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,10 +89,11 @@ int				count_all(t_vars *vars);
 void			count_elements(t_vars *vars, int i, int j);
 void			count_extra(t_vars *vars);
 
-void			put_wall_floor(t_vars *vars, int i, int j);
-void			put_player(t_vars *vars, int i, int j);
-void			put_egg(t_vars *vars, int i, int j);
-void			put_exit(t_vars *vars, int i, int j);
+void			draw_background(t_vars *vars, int i, int j);
+void			draw_player(t_vars *vars, int i, int j);
+void			draw_exit(t_vars *vars, int i, int j);
+void			draw_egg(t_vars *vars, int i, int j);
+void			draw_images(t_vars	*vars);
 
 void			move_up(t_vars *vars);
 void			move_down(t_vars *vars);

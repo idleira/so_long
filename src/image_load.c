@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:16:29 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 19:25:13 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:51:49 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ void	img_load(t_vars *vars)
 			"./images/egg.xpm", &x, &y);
 	vars->m.exit = mlx_xpm_file_to_image(vars->mlx,
 			"./images/exit.xpm", &x, &y);
+	img_control(vars);
 }
 
 void	img_control(t_vars *vars)
