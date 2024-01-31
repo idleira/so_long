@@ -25,7 +25,7 @@ void	map_read_2(t_vars *vars)
 		j = 0;
 		while (j < vars->width)
 		{
-			if (i == vars->i && j == vars->j)
+			if (i == vars->display_x && j == vars->display_y)
 				vars->path.imap[i][j] = 1;
 			else
 				vars->path.imap[i][j] = 0;

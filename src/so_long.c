@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:28 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 19:20:20 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:50:31 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	main(int argc, char **argv)
 	t_vars	vars;
 
 	if (argc != 2)
-		exit(ft_printf("\033[0;31merror\ninvalid number of arguments\n"));
+		exit(ft_printf("\033[0;31merror\ninvalid number of arguments.\n"));
 	vars.mlx = mlx_init();
 	vars.map_name = argv[1];
 	map_read(&vars);

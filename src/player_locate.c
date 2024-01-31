@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:46:15 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/12 16:46:18 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:47:25 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@ void	player_locate(t_vars *vars)
 		{
 			if (vars->map[i][j] == 'P')
 			{
-				vars->i = i;
-				vars->j = j;
+				vars->display_x = i;
+				vars->display_y = j;
 			}
 			j++;
 		}

@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 19:26:36 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:47:49 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ typedef struct s_vars
 	int			height;
 	int			move_count;
 	int			collected;
-	int			y;
-	int			x;
-	int			i;
-	int			j;
+	int			player_x;
+	int			player_y;
+	int			display_x;
+	int			display_y;
 }				t_vars;
 
 void			validate_map(t_vars *vars);

@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:21 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 17:57:01 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:46:10 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,11 @@ void	map_read(t_vars *vars)
 	int	fd;
 	int	i;
 
-	vars->y = map_height(vars->map_name);
-	vars->map = malloc(sizeof(char *) * (vars->y + 1));
+	vars->player_y = map_height(vars->map_name);
+	vars->map = malloc(sizeof(char *) * (vars->player_y + 1));
 	i = 0;
 	fd = open(vars->map_name, O_RDONLY);
-	while (i < vars->y)
+	while (i < vars->player_y)
 	{
 		vars->map[i] = gnl(fd);
 		i++;

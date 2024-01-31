@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:40:23 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 19:23:39 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 19:47:25 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	validate_map(t_vars *vars)
 	validate_map_rectangular(vars, 0, 0);
 }
 
-//	path_finder(vars->i, vars->j, vars);
+//	path_finder(vars->display_x, vars->display_y, vars);
 //	if (vars->counts.count_eggs == 0
 //		|| vars->path.collectible_egg != vars->counts.count_eggs)
 //	{
