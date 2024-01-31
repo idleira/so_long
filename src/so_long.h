@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/29 17:54:00 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:01:12 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,17 +70,22 @@ typedef struct s_vars
 }				t_vars;
 
 void			validate_map(t_vars *vars);
-void			error_exit(const char *message);
 void			validate_map_free(t_vars *vars);
 void			validate_map_name(char *map_name);
 void			validate_map_components(char **map);
 void			validate_map_rectangular(t_vars *vars, int i, int j);
 int				validate_map_border(t_vars *vars);
+
 void			error_center_top_down();
 void			error_center_left_right();
+void			error_exit(const char *message);
 
 void			map_read(t_vars *vars);
 void			map_read_2(t_vars *vars);
+
+int				map_height(char *map_name);
+int				map_width(t_vars *vars);
+void			map_dimensions(t_vars *vars);
 
 int				count_all(t_vars *vars);
 void			count_elements(t_vars *vars, int i, int j);
@@ -91,24 +96,21 @@ void			put_player(t_vars *vars, int i, int j);
 void			put_egg(t_vars *vars, int i, int j);
 void			put_exit(t_vars *vars, int i, int j);
 
-int				press_close_key(t_vars *vars);
 void			move_up(t_vars *vars);
 void			move_down(t_vars *vars);
 void			move_left(t_vars *vars);
 void			move_right(t_vars *vars);
 int				player_move(int keycode, t_vars *vars);
+int				exit_esc(t_vars *vars);
 
-void			exit_door(t_vars *vars);
+void			check_exit_door(t_vars *vars);
 void			player_locate(t_vars *vars);
+
 void			free_imap(t_vars *vars);
 void			free_map(t_vars *vars);
 void			free_exit(t_vars *vars);
 void			free_wrong(t_vars *vars);
-void			free_mapfree(t_vars *vars);
 
-void			dimensions(t_vars *vars);
-int				vertical_len(char *map_name);
-int				horizontal_len(t_vars *vars);
 
 void			img_load(t_vars *vars);
 void			img_control(t_vars *vars);

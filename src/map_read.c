@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:21 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/29 18:09:00 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:57:01 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	map_read(t_vars *vars)
 	int	fd;
 	int	i;
 
-	vars->y = vertical_len(vars->map_name);
+	vars->y = map_height(vars->map_name);
 	vars->map = malloc(sizeof(char *) * (vars->y + 1));
 	i = 0;
 	fd = open(vars->map_name, O_RDONLY);
@@ -30,7 +30,7 @@ void	map_read(t_vars *vars)
 	close(fd);
 }
 
-int	vertical_len(char *map_name)
+int	map_height(char *map_name)
 {
 	int		count;
 	int		fd;
@@ -48,7 +48,7 @@ int	vertical_len(char *map_name)
 	return (count);
 }
 
-int	horizontal_len(t_vars *vars)
+int	map_width(t_vars *vars)
 {
 	int	i;
 

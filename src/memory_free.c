@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:10 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/29 15:49:01 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:05:34 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,4 @@ void	free_wrong(t_vars *vars)
 {
 	free_map(vars);
 	free_imap(vars);
-}
-
-void	free_mapfree(t_vars *vars)
-{
-	free(vars->path.imap);
 }

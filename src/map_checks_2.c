@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:40:23 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/30 19:09:53 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 17:56:24 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,17 +53,17 @@ void	error_center_left_right(void)
 	exit(1);
 }
 
-void	dimensions(t_vars *vars)
+void	map_dimensions(t_vars *vars)
 {
-	vars->width = horizontal_len(vars);
+	vars->width = map_width(vars);
 	ft_printf("width: %d\n", vars->width);
-	vars->height = vertical_len(vars->map_name);
+	vars->height = map_height(vars->map_name);
 	ft_printf("height: %d\n", vars->height);
 }
 
 void	validate_map(t_vars *vars)
 {
-	dimensions(vars);
+	map_dimensions(vars);
 	validate_map_name(vars->map_name);
 	validate_map_free(vars);
 	validate_map_border(vars);

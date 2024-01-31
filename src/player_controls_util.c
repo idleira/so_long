@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:17:20 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/29 15:49:01 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 18:00:26 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ void	move_left(t_vars *vars)
 	}
 }
 
-void	exit_door(t_vars *vars)
+void	check_exit_door(t_vars *vars)
 {
 	if (vars->map[vars->i][vars->j] == 'E'
 		&& vars->collected == vars->counts.count_eggs)
