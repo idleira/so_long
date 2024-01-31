@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:15:35 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 19:57:11 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 20:01:50 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ void	draw_background(t_vars *vars, int i, int j)
 			if (vars->map[i][j] == '1')
 			{
 				mlx_put_image_to_window(vars->mlx, vars->win,
-					vars->m.wall, x, y);
+					vars->img.wall, x, y);
 			}
 			else if (vars->map[i][j] == '0')
 			{
 				mlx_put_image_to_window(vars->mlx, vars->win,
-					vars->m.floor, x, y);
+					vars->img.floor, x, y);
 			}
 			j++;
 		}
@@ -55,7 +55,7 @@ void	draw_player(t_vars *vars, int i, int j)
 			if (vars->map[i][j] == 'P')
 			{
 				mlx_put_image_to_window(vars->mlx, vars->win,
-					vars->m.player_img, x, y);
+					vars->img.player_img, x, y);
 				vars->player_x = x;
 				vars->player_y = y;
 			}
@@ -80,7 +80,7 @@ void	draw_egg(t_vars *vars, int i, int j)
 			if (vars->map[i][j] == 'C')
 			{
 				mlx_put_image_to_window(vars->mlx, vars->win,
-					vars->m.egg, x, y);
+					vars->img.egg, x, y);
 			}
 			j++;
 		}
@@ -103,7 +103,7 @@ void	draw_exit(t_vars *vars, int i, int j)
 			if (vars->map[i][j] == 'E')
 			{
 				mlx_put_image_to_window(vars->mlx, vars->win,
-					vars->m.exit, x, y);
+					vars->img.exit, x, y);
 			}
 			j++;
 		}

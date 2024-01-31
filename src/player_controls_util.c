@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:17:20 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 19:47:25 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/01/31 20:02:35 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	move_up(t_vars *vars)
 	if (vars->map[vars->display_x - 1][vars->display_y] != '1')
 	{
 		if (vars->map[vars->display_x][vars->display_y] != 'E')
-			mlx_put_image_to_window(vars->mlx, vars->win, vars->m.floor,
+			mlx_put_image_to_window(vars->mlx, vars->win, vars->img.floor,
 				vars->player_x, vars->player_y);
 		else
-			mlx_put_image_to_window(vars->mlx, vars->win, vars->m.exit,
+			mlx_put_image_to_window(vars->mlx, vars->win, vars->img.exit,
 				vars->player_x, vars->player_y);
 		if (vars->map[vars->display_x][vars->display_y] != 'E')
 			vars->map[vars->display_x][vars->display_y] = '0';
@@ -28,7 +28,7 @@ void	move_up(t_vars *vars)
 		vars->display_x -= 1;
 		++vars->move_count;
 		mlx_put_image_to_window(vars->mlx, vars->win,
-			vars->m.player_back, vars->player_x, vars->player_y);
+			vars->img.player_back, vars->player_x, vars->player_y);
 		if (vars->map[vars->display_x][vars->display_y] == '0')
 			vars->map[vars->display_x][vars->display_y] = 'P';
 		if (vars->map[vars->display_x][vars->display_y] == 'C')
@@ -45,17 +45,17 @@ void	move_down(t_vars *vars)
 	if (vars->map[vars->display_x + 1][vars->display_y] != '1')
 	{
 		if (vars->map[vars->display_x][vars->display_y] != 'E')
-			mlx_put_image_to_window(vars->mlx, vars->win, vars->m.floor,
+			mlx_put_image_to_window(vars->mlx, vars->win, vars->img.floor,
 				vars->player_x, vars->player_y);
 		else
-			mlx_put_image_to_window(vars->mlx, vars->win, vars->m.exit,
+			mlx_put_image_to_window(vars->mlx, vars->win, vars->img.exit,
 				vars->player_x, vars->player_y);
 		if (vars->map[vars->display_x][vars->display_y] != 'E')
 			vars->map[vars->display_x][vars->display_y] = '0';
 		vars->player_y += IMG_SIZE;
 		vars->display_x += 1;
 		++vars->move_count;
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->m.player_img,
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->img.player_img,
 			vars->player_x, vars->player_y);
 		if (vars->map[vars->display_x][vars->display_y] == '0')
 			vars->map[vars->display_x][vars->display_y] = 'P';
@@ -73,10 +73,10 @@ void	move_right(t_vars *vars)
 	if (vars->map[vars->display_x][vars->display_y + 1] != '1')
 	{
 		if (vars->map[vars->display_x][vars->display_y] != 'E')
-			mlx_put_image_to_window(vars->mlx, vars->win, vars->m.floor,
+			mlx_put_image_to_window(vars->mlx, vars->win, vars->img.floor,
 				vars->player_x, vars->player_y);
 		else
-			mlx_put_image_to_window(vars->mlx, vars->win, vars->m.exit,
+			mlx_put_image_to_window(vars->mlx, vars->win, vars->img.exit,
 				vars->player_x, vars->player_y);
 		if (vars->map[vars->display_x][vars->display_y] != 'E')
 			vars->map[vars->display_x][vars->display_y] = '0';
@@ -84,7 +84,7 @@ void	move_right(t_vars *vars)
 		vars->display_y += 1;
 		++vars->move_count;
 		mlx_put_image_to_window(vars->mlx, vars->win,
-			vars->m.player_right, vars->player_x, vars->player_y);
+			vars->img.player_right, vars->player_x, vars->player_y);
 		if (vars->map[vars->display_x][vars->display_y] == '0')
 			vars->map[vars->display_x][vars->display_y] = 'P';
 		if (vars->map[vars->display_x][vars->display_y] == 'C')
@@ -101,10 +101,10 @@ void	move_left(t_vars *vars)
 	if (vars->map[vars->display_x][vars->display_y - 1] != '1')
 	{
 		if (vars->map[vars->display_x][vars->display_y] != 'E')
-			mlx_put_image_to_window(vars->mlx, vars->win, vars->m.floor,
+			mlx_put_image_to_window(vars->mlx, vars->win, vars->img.floor,
 				vars->player_x, vars->player_y);
 		else
-			mlx_put_image_to_window(vars->mlx, vars->win, vars->m.exit,
+			mlx_put_image_to_window(vars->mlx, vars->win, vars->img.exit,
 				vars->player_x, vars->player_y);
 		if (vars->map[vars->display_x][vars->display_y] != 'E')
 			vars->map[vars->display_x][vars->display_y] = '0';
@@ -112,7 +112,7 @@ void	move_left(t_vars *vars)
 		vars->display_y -= 1;
 		++vars->move_count;
 		mlx_put_image_to_window(vars->mlx, vars->win,
-			vars->m.player_left, vars->player_x, vars->player_y);
+			vars->img.player_left, vars->player_x, vars->player_y);
 		if (vars->map[vars->display_x][vars->display_y] == '0')
 			vars->map[vars->display_x][vars->display_y] = 'P';
 		if (vars->map[vars->display_x][vars->display_y] == 'C')
