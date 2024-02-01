@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/01 18:12:32 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/01 18:37:53 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define SO_LONG_H
 
 # include "../libs/libft/libft.h"
-# include "../libs/mlx/mlx.h"
+# include "../libs/mlx_linux/mlx.h"
 # include "../libs/ft_printf/ft_printf.h"
 # include "../libs/gnl/gnl.h"
 # include <stdio.h>

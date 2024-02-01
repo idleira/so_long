@@ -6,7 +6,7 @@
 #    By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 19:31:41 by ibeliaie          #+#    #+#              #
-#    Updated: 2024/02/01 18:12:32 by ibeliaie         ###   ########.fr        #
+#    Updated: 2024/02/01 18:34:46 by ibeliaie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,15 +18,15 @@ DEF_COLOR = \033[0;37m
 
 NAME = so_long
 
-MLX_DIR = libs/mlx
+MLX_DIR = libs/mlx_linux
 GNL_DIR = libs/gnl
 LIBFT_DIR = libs/libft
 
-LIBS = $(LIBFT_DIR)/libft.a $(MLX_DIR)/libmlx.a ${GNL_DIR}/libgnl.a
+LIBS = $(LIBFT_DIR)/libft.a $(MLX_DIR)/libmlx_Linux.a ${GNL_DIR}/libgnl.a
 
 CC = @cc
 CFLAGS = -Wall -Wextra -Werror -g -I/usr/X11/include -Ilib/mlx
-MLXFLAGS = -L/usr/X11/lib -lX11 -lXext -Llibs/mlx -lmlx -Llibs/libft  -Llibs/ft_printf -lftprintf -Llibs/gnl -lgnl -lft -lm
+MLXFLAGS = -L/usr/X11/lib -lX11 -lXext -Llibs/mlx_linux -lmlx -Llibs/libft  -Llibs/ft_printf -lftprintf -Llibs/gnl -lgnl -lft -lm
 
 
 SRCS =	src/counts.c				src/map_checks_1.c				src/player_locate.c				\
@@ -51,13 +51,13 @@ $(NAME): $(OBJS)
 clean:
 	@rm -rf $(OBJS)
 	@rm -f main/*.o
-	@rm -f libs/mlx/obj/*.o  libs/libft/*.o libs/ft_printf/*.o libs/gnl/*.o
+	@rm -f libs/mlx_linux/obj/*.o  libs/libft/*.o libs/ft_printf/*.o libs/gnl/*.o
 
 fclean: clean
 	@rm -rf $(NAME)
 	@make --no-print-directory -C ${GNL_DIR} fclean
 	@make --no-print-directory -C ${LIBFT_DIR} fclean
-	@rm -f libs/mlx/libmlx_Linux.a libs/mlx/libmlx.a libs/libft/libft.a libs/ft_printf/libftprintf.a libs/gnl/libgnl.a
+	@rm -f libs/mlx_linux/libmlx_Linux.a libs/mlx_linux/libmlx_Linux.a libs/libft/libft.a libs/ft_printf/libftprintf.a libs/gnl/libgnl.a
 	@echo "$(DEF_COLOR) ૮₍ •⤙•˶| $(YELLOW)𝕗𝕦𝕝𝕝 𝕔𝕝𝕖𝕒𝕟-𝕦𝕡 𝕔𝕠𝕞𝕡𝕝𝕖𝕥𝕖$(DEF_COLOR)ˎˊ˗"
 
 re: fclean all
