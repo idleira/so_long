@@ -33,4 +33,8 @@ int	main(int argc, char **argv)
 	mlx_hook (vars.win, 17, 0, press_esc, &vars);
 	mlx_hook(vars.win, 2, 1L << 0, player_move, &vars);
 	mlx_loop(vars.mlx);
+	free (vars.map);
+	free (vars.win);
+	free (vars.mlx);
+	return (0);
 }
