@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:38:32 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/01 17:24:52 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/01 18:11:33 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,6 @@ void	validate_map_rectangular(t_vars *vars, int i, int j)
 	int	count;
 
 	area = (vars->height) * (vars->width);
-	ft_printf("area: %d\n", area);
 	count = 0;
 	while (vars->map[i])
 	{

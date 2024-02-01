@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:40:23 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/01 18:00:25 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/01 18:11:07 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,12 @@ void	validate_map(t_vars *vars)
 	validate_map_border(vars);
 	validate_map_components(vars->map);
 	validate_map_rectangular(vars, 0, 0);
-	path_finder(vars->display_x, vars->display_y, vars);
-	if (vars->counts.count_eggs == 0
-		|| vars->path.collectible != vars->counts.count_eggs)
-	{
-		ft_printf("\033[0;31merror\nimpossible to complete the game\n");
-		free_maps(vars);
-		exit(1);
-	}
+	// path_finder(vars->display_x, vars->display_y, vars);
+	// if (vars->counts.count_eggs == 0
+	// 	|| vars->path.collectible != vars->counts.count_eggs)
+	// {
+	// 	ft_printf("\033[0;31merror\nimpossible to complete the game\n");
+	// 	free_maps(vars);
+	// 	exit(1);
+	// }
 }

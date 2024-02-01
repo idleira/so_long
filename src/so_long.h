@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/01 17:16:33 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/01 18:12:32 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ int				validate_map_border(t_vars *vars);
 void			error_exit(const char *message);
 
 void			map_read(t_vars *vars);
-void			map_read_2(t_vars *vars);
+void			map_read_path(t_vars *vars);
 
 int				map_height(char *map_name);
 int				map_width(t_vars *vars);
