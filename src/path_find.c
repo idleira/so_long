@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:24 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 20:00:16 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/01 17:06:06 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 int	path_finder(int y, int x, t_vars *vars)
 {
-	if ((vars->map[y + 1][x] != '1' && vars->map[y + 1][x] != 'V')
-		&& vars->path.path_map[y + 1][x] < 1)
+	if ((vars->map[y + 1][x] != '1') && vars->path.path_map[y + 1][x] < 1)
 	{
 		if (vars->map[y + 1][x] == 'C')
-			vars->path.collectible_egg++;
+			vars->path.collectible++;
 		vars->path.path_map[y + 1][x] = vars->path.path_map[y][x] + 1;
 		path_finder(y + 1, x, vars);
 	}
@@ -30,11 +29,10 @@ int	path_finder(int y, int x, t_vars *vars)
 
 int	path_up(int y, int x, t_vars *vars)
 {
-	if ((vars->map[y - 1][x] != '1' && vars->map[y - 1][x] != 'V')
-		&& vars->path.path_map[y - 1][x] < 1)
+	if ((vars->map[y - 1][x] != '1') && vars->path.path_map[y - 1][x] < 1)
 	{
 		if (vars->map[y - 1][x] == 'C')
-			vars->path.collectible_egg++;
+			vars->path.collectible++;
 		vars->path.path_map[y - 1][x] = vars->path.path_map[y][x] + 1;
 		path_finder(y - 1, x, vars);
 	}
@@ -43,11 +41,10 @@ int	path_up(int y, int x, t_vars *vars)
 
 int	path_right(int y, int x, t_vars *vars)
 {
-	if ((vars->map[y][x + 1] != '1' && vars->map[y][x + 1] != 'V')
-		&& vars->path.path_map[y][x + 1] < 1)
+	if ((vars->map[y][x + 1] != '1') && vars->path.path_map[y][x + 1] < 1)
 	{
 		if (vars->map[y][x + 1] == 'C')
-			vars->path.collectible_egg++;
+			vars->path.collectible++;
 		vars->path.path_map[y][x + 1] = vars->path.path_map[y][x] + 1;
 		path_finder(y, x + 1, vars);
 	}
@@ -56,11 +53,10 @@ int	path_right(int y, int x, t_vars *vars)
 
 int	path_left(int y, int x, t_vars *vars)
 {
-	if ((vars->map[y][x - 1] != '1' && vars->map[y][x - 1] != 'V')
-		&& vars->path.path_map[y][x - 1] < 1)
+	if ((vars->map[y][x - 1] != '1') && vars->path.path_map[y][x - 1] < 1)
 	{
 		if (vars->map[y][x - 1] == 'C')
-			vars->path.collectible_egg++;
+			vars->path.collectible++;
 		vars->path.path_map[y][x - 1] = vars->path.path_map[y][x] + 1;
 		path_finder(y, x - 1, vars);
 	}

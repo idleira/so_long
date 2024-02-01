@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:21 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 19:46:10 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/01 17:20:15 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,21 @@ void	map_read(t_vars *vars)
 	int	i;
 
 	vars->player_y = map_height(vars->map_name);
+	if (vars->player_y == -1)
+	{
+		ft_putstr_fd("error: invalid map.\n", 2);
+		exit(EXIT_FAILURE);
+	}
 	vars->map = malloc(sizeof(char *) * (vars->player_y + 1));
+	if (!vars->map)
+		exit(EXIT_FAILURE);
 	i = 0;
 	fd = open(vars->map_name, O_RDONLY);
+	if (fd == -1)
+	{
+		ft_putstr_fd("error: unable to open map file.\n", 2);
+		exit(EXIT_FAILURE);
+	}
 	while (i < vars->player_y)
 	{
 		vars->map[i] = gnl(fd);

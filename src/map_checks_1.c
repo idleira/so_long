@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:38:32 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 19:17:43 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/01 17:24:52 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	validate_map_free(t_vars *vars)
 
 	fd = open(vars->map_name, O_RDONLY);
 	tmp = gnl(fd);
-	if (tmp == NULL)
+	if (!tmp)
 		error_exit("wrong or empty map\n");
 	free(tmp);
 }

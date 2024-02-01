@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:17:20 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 20:02:35 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/01 17:15:03 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,6 +127,6 @@ void	move_left(t_vars *vars)
 int	press_esc(t_vars *vars)
 {
 	ft_printf("\n\033[0;35mgame over!\033[0m\n");
-	free_exit(vars);
+	free_resources(vars);
 	exit(1);
 }

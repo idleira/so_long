@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 20:01:10 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/01 17:16:33 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct s_counts
 
 typedef struct s_path
 {
-	int			collectible_egg;
+	int			collectible;
 	int			**path_map;
 }				t_path;
 
@@ -105,10 +105,8 @@ int				press_esc(t_vars *vars);
 void			check_exit(t_vars *vars);
 void			player_locate(t_vars *vars);
 
-void			free_path_map(t_vars *vars);
-void			free_map(t_vars *vars);
-void			free_exit(t_vars *vars);
-void			free_wrong(t_vars *vars);
+void			free_maps(t_vars *vars);
+void			free_resources(t_vars *vars);
 
 void			img_load(t_vars *vars);
 void			img_control(t_vars *vars);

@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:28 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 19:56:01 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/01 17:55:43 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 2)
 		exit(ft_printf("\033[0;31merror\ninvalid number of arguments.\n"));
+	ft_memset(&vars, 0, sizeof(vars));
 	vars.mlx = mlx_init();
 	vars.map_name = argv[1];
 	map_read(&vars);

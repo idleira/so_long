@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:45:25 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/31 19:09:12 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/01 17:15:03 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	count_all(t_vars *vars)
 {
-	vars->path.collectible_egg = 0;
+	vars->path.collectible = 0;
 	vars->counts.count_eggs = 0;
 	vars->counts.player_count = 0;
 	vars->counts.exit_count = 0;
@@ -50,13 +50,13 @@ void	count_extra(t_vars *vars)
 	if (vars->counts.player_count != 1)
 	{
 		ft_printf("map should include ONE player");
-		free_exit(vars);
+		free_resources(vars);
 		exit(0);
 	}
 	else if (vars->counts.exit_count != 1)
 	{
 		ft_printf("map should include ONE exit");
-		free_exit(vars);
+		free_resources(vars);
 		exit(0);
 	}
 }
