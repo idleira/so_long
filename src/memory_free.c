@@ -74,5 +74,5 @@ void	free_resources(t_vars *vars)
 	mlx_destroy_image(vars->mlx, vars->img.player_back);
 	mlx_destroy_image(vars->mlx, vars->img.wall);
 	mlx_destroy_window(vars->mlx, vars->win);
-	free(mlx);
+	free(vars->mlx);
 }
