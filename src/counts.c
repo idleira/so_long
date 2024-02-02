@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:45:25 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/01 17:15:03 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/02 18:53:23 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@ void	count_extra(t_vars *vars)
 	if (vars->counts.player_count != 1)
 	{
 		ft_printf("map should include ONE player");
-		free_resources(vars);
+		free_images(vars);
 		exit(0);
 	}
 	else if (vars->counts.exit_count != 1)
 	{
 		ft_printf("map should include ONE exit");
-		free_resources(vars);
+		free_images(vars);
 		exit(0);
 	}
 }

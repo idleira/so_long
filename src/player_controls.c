@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:05 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/01 17:17:08 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/02 18:53:23 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,17 @@ int	player_move(int keycode, t_vars *vars)
 	return (1);
 }
 
+void	quit(t_vars *vars)
+{
+	mlx_loop_end(vars->mlx);
+	free_maps(vars);
+	free_images(vars);
+	mlx_destroy_display(vars->mlx);
+	free_double_pointer(vars->map);
+	free(vars->mlx);
+	exit(0);
+}
+
 void	check_exit(t_vars *vars)
 {
 	if (vars->map[vars->display_x][vars->display_y] == 'E'
@@ -47,8 +58,7 @@ void	check_exit(t_vars *vars)
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->img.exit,
 			vars->player_x, vars->player_y);
 		ft_printf("\nyou win!\n");
-		free_resources(vars);
-		exit(0);
+		quit(vars);
 	}
 	else if (vars->map[vars->display_x][vars->display_y] == 'E'
 			&& vars->collected != vars->counts.count_eggs)

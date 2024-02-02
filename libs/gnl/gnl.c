@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 17:07:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/01/29 17:13:20 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/02 21:09:16 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,10 @@ char	*gnl_read(int fd, char *line)
 		line = gnl_calloc(1, sizeof(char));
 	buff = gnl_calloc(BUFFER_SIZE + 1, sizeof(char));
 	if (!buff)
+	{
+		free(line);
 		return (NULL);
+	}
 	bytes_read = 1;
 	while (bytes_read > 0 && gnl_findnl(buff) < 0)
 	{

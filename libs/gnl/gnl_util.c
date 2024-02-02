@@ -23,7 +23,10 @@ char	*gnl_join(char *buff, char *read_line)
 	r = gnl_calloc((gnl_strlen(buff, '\0') + \
 		gnl_strlen(read_line, '\0') + 1), sizeof(char));
 	if (!r)
+	{
+		free(buff);
 		return (NULL);
+	}
 	i = 0;
 	while (buff[i])
 	{
