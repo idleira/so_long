@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:10 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/02 21:12:47 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/02 21:18:03 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void	free_double_pointer(char **str)
 	return ;
 }
 
-void	free_resources(t_vars *vars)
+void	free_images(t_vars *vars)
 {
 	free_maps(vars);
 	mlx_destroy_image(vars->mlx, vars->img.floor);
