@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:10 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/01 17:21:11 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:45:04 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,8 @@ void	free_resources(t_vars *vars)
 	mlx_destroy_image(vars->mlx, vars->img.exit);
 	mlx_destroy_image(vars->mlx, vars->img.player_left);
 	mlx_destroy_image(vars->mlx, vars->img.player_right);
-	mlx_destroy_image(vars->mlx, vars->img.player_img);
+	mlx_destroy_image(vars->mlx, vars->img.player_front);
 	mlx_destroy_image(vars->mlx, vars->img.player_back);
 	mlx_destroy_image(vars->mlx, vars->img.wall);
 	mlx_destroy_window(vars->mlx, vars->win);
 }
-

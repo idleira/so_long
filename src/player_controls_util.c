@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:17:20 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/01 17:15:03 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:45:04 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void	move_down(t_vars *vars)
 		vars->player_y += IMG_SIZE;
 		vars->display_x += 1;
 		++vars->move_count;
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->img.player_img,
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->img.player_front,
 			vars->player_x, vars->player_y);
 		if (vars->map[vars->display_x][vars->display_y] == '0')
 			vars->map[vars->display_x][vars->display_y] = 'P';
