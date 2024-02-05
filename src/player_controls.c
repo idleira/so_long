@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:05 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/02 18:53:23 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/05 17:21:50 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,11 @@ int	player_move(int keycode, t_vars *vars)
 void	quit(t_vars *vars)
 {
 	mlx_loop_end(vars->mlx);
-	free_maps(vars);
 	free_images(vars);
+	mlx_clear_window(vars->mlx, vars->win);
+	mlx_destroy_window(vars->mlx, vars->win);
 	mlx_destroy_display(vars->mlx);
 	free_double_pointer(vars->map);
-	free(vars->mlx);
 	exit(0);
 }
 

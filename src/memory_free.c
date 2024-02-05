@@ -18,15 +18,14 @@ void	free_maps(t_vars *vars)
 	
 	if (!vars)
 		return;
-
-	i = 0;
+	//i = 0;
 	//while (i < vars->height)
 	//{
 	//	if (vars->path.path_map[i])
 	//		free(vars->path.path_map[i]);
 	//	i++;
 	//}
-	free(vars->path.path_map);
+	//free(vars->path.path_map);
 	i = 0;
 	while (i < vars->height)
 	{
@@ -55,7 +54,12 @@ void	free_double_pointer(char **str)
 	if (str)
 	{
 		while (str[i])
+		{
+//			printf("i: ");
+//			printf("%i\n", i);
+//			printf("%s wee\n", str[i]);
 			free_pointer(str[i++]);
+		}
 		free(str);
 		str = NULL;
 	}
@@ -64,7 +68,6 @@ void	free_double_pointer(char **str)
 
 void	free_images(t_vars *vars)
 {
-	free_maps(vars);
 	mlx_destroy_image(vars->mlx, vars->img.floor);
 	mlx_destroy_image(vars->mlx, vars->img.egg);
 	mlx_destroy_image(vars->mlx, vars->img.exit);
@@ -73,6 +76,4 @@ void	free_images(t_vars *vars)
 	mlx_destroy_image(vars->mlx, vars->img.player_front);
 	mlx_destroy_image(vars->mlx, vars->img.player_back);
 	mlx_destroy_image(vars->mlx, vars->img.wall);
-	mlx_destroy_window(vars->mlx, vars->win);
-	free(vars->mlx);
 }
