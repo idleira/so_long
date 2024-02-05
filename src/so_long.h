@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/02 21:13:58 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/05 19:25:41 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,6 @@ typedef struct s_counts
 	int			exit_count;
 }				t_counts;
 
-typedef struct s_path
-{
-	int			collectible;
-	int			**path_map;
-}				t_path;
-
 typedef struct s_images
 {
 	char		*floor;
@@ -53,7 +47,6 @@ typedef struct s_images
 typedef struct s_vars
 {
 	t_counts	counts;
-	t_path		path;
 	t_images	img;
 	char		**map;
 	char		*map_name;
@@ -79,7 +72,6 @@ int				validate_map_border(t_vars *vars);
 void			error_exit(const char *message);
 
 void			map_read(t_vars *vars);
-void			map_read_path(t_vars *vars);
 
 int				map_height(char *map_name);
 int				map_width(t_vars *vars);
@@ -105,7 +97,7 @@ int				press_esc(t_vars *vars);
 void			check_exit(t_vars *vars);
 void			player_locate(t_vars *vars);
 
-void			free_maps(t_vars *vars);
+int				free_map(char **map);
 void			free_pointer(char *str);
 void			free_double_pointer(char **str);
 void			free_images(t_vars *vars);
@@ -113,10 +105,11 @@ void			free_images(t_vars *vars);
 void			img_load(t_vars *vars);
 void			img_control(t_vars *vars);
 
-int				path_up(int y, int x, t_vars *vars);
-int				path_right(int y, int x, t_vars *vars);
-int				path_left(int y, int x, t_vars *vars);
-int				path_finder(int y, int x, t_vars *vars);
+int				path_finder(char **map, int count_eggs, int exit_found);
+char			**copy_map(char **map);
+void			find_start(char **map_copy, int *line_count, int *char_count);
+int				map_flood(char **map_copy, int line_start, int char_start, int *c);
+int				exit_reachable(char **map_copy, int line_start, int char_start, int *e);
 
 void			quit(t_vars *vars);
 

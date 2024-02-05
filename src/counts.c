@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:45:25 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/02 18:53:23 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/05 19:20:01 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	count_all(t_vars *vars)
 {
-	vars->path.collectible = 0;
 	vars->counts.count_eggs = 0;
 	vars->counts.player_count = 0;
 	vars->counts.exit_count = 0;

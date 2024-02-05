@@ -6,34 +6,24 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:10 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/02 21:18:03 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/05 19:23:44 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	free_maps(t_vars *vars)
+int	free_map(char **map)
 {
 	int	i;
-	
-	if (!vars)
-		return;
-	//i = 0;
-	//while (i < vars->height)
-	//{
-	//	if (vars->path.path_map[i])
-	//		free(vars->path.path_map[i]);
-	//	i++;
-	//}
-	//free(vars->path.path_map);
+
 	i = 0;
-	while (i < vars->height)
+	while (map[i])
 	{
-		if (vars->map[i])
-			free(vars->map[i]);
+		free(map[i]);
 		i++;
 	}
-	free(vars->map);
+	free(map);
+	return (0);
 }
 
 void	free_pointer(char *str)
@@ -54,12 +44,7 @@ void	free_double_pointer(char **str)
 	if (str)
 	{
 		while (str[i])
-		{
-//			printf("i: ");
-//			printf("%i\n", i);
-//			printf("%s wee\n", str[i]);
 			free_pointer(str[i++]);
-		}
 		free(str);
 		str = NULL;
 	}
