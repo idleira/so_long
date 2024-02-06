@@ -57,6 +57,7 @@ int	map_height(char *map_name)
 		ptr = gnl(fd);
 		count++;
 	}
+	close(fd);
 	return (count);
 }
 

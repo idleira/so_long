@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:38:32 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/01 18:11:33 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/06 20:09:40 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	error_exit(const char *message)
 {
 	ft_printf("\033[0;31merror\n%s\n", message);
-	exit(1);
+	exit(0);
 }
 
 void	validate_map_name(char *map_name)
@@ -40,8 +40,12 @@ void	validate_map_free(t_vars *vars)
 	fd = open(vars->map_name, O_RDONLY);
 	tmp = gnl(fd);
 	if (!tmp)
+	{
+		close(fd);
 		error_exit("wrong or empty map\n");
+	}
 	free(tmp);
+	close(fd);
 }
 
 void	validate_map_components(char **map)

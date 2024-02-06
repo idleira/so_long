@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:40:23 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/05 19:27:54 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/06 20:10:21 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,16 @@ int	validate_map_border(t_vars *vars)
 		ptr = gnl(fd);
 		if (!ptr)
 			return (0);
-		if (vars->map[0][i] != '1' || vars->map[vars->height
-			- 1][i] != '1')
+		if (vars->map[0][i] != '1' || vars->map[vars->height - 1][i] != '1'
+			|| vars->map[i][0] != '1' || vars->map[i][vars->width - 1] != '1')
 		{
+			close(fd);
 			free(ptr);
-			error_exit("top or bottom edges not surrounded by walls.\n");
-		}
-		else if (vars->map[i][0] != '1' || vars->map[i][vars->width - 1] != '1')
-		{
-			free(ptr);
-			error_exit("right or left edges are not surrounded by walls.\n");
+			mlx_destroy_display(vars->mlx);
+			free(vars->mlx);
+			free_double_pointer(vars->map);
+			ft_printf("map is not surrounded by walls.\n");
+			exit(0);
 		}
 		i++;
 		free(ptr);
@@ -57,5 +57,5 @@ void	validate_map(t_vars *vars)
 	validate_map_border(vars);
 	validate_map_components(vars->map);
 	validate_map_rectangular(vars, 0, 0);
-	path_finder(vars->map, vars->counts.count_eggs, 0);
+	//path_finder(vars->map, vars->counts.count_eggs, 0);
 }
