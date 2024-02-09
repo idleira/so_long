@@ -70,7 +70,6 @@ typedef struct s_vars
 }				t_vars;
 
 void			validate_map(t_vars *vars);
-void			validate_map_free(t_vars *vars);
 void			validate_map_name(char *map_name);
 void			validate_map_components(char **map);
 void			validate_map_rectangular(t_vars *vars, int i, int j);

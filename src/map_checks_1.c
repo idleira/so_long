@@ -32,22 +32,6 @@ void	validate_map_name(char *map_name)
 	}
 }
 
-void	validate_map_free(t_vars *vars)
-{
-	int		fd;
-	char	*tmp;
-
-	fd = open(vars->map_name, O_RDONLY);
-	tmp = gnl(fd);
-	if (!tmp)
-	{
-		close(fd);
-		error_exit("empty map\n");
-	}
-	free(tmp);
-	close(fd);
-}
-
 void	validate_map_components(char **map)
 {
 	int	i;

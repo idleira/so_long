@@ -24,13 +24,12 @@
 # include "../libft/libft.h"
 
 char	*gnl(int fd);
-char	*gnl_read(int fd, char *line);
-char	*gnl_retline(char *line);
-char	*gnl_save(char *buff);
 
-int		gnl_strlen(char *s, char c);
-int		gnl_findnl(char *s);
-char	*gnl_calloc(int nmemb, int size);
-char	*gnl_join(char *buff, char *read_line);
+char	*ft_new_rest(char *rest);
+size_t	ft_gnl_strlen(const char *str);
+char	*ft_extract_line(char *rest);
+char	*ft_gnl_strchr(char *str, int find);
+char	*ft_read_till_nl(int fd, char *rest);
+char	*ft_gnl_strjoin(char *rest, char *buff);
 
 #endif
