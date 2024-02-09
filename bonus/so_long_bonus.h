@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#ifndef SO_LONG_BONUS_H
+# define SO_LONG_BONUS_H
 
 # include "../libs/libft/libft.h"
 # include "../libs/mlx_linux/mlx.h"
@@ -30,6 +30,7 @@ typedef struct s_counts
 	int			count_eggs;
 	int			player_count;
 	int			exit_count;
+	int 		chimken_count;
 }				t_counts;
 
 typedef struct s_images
@@ -42,6 +43,7 @@ typedef struct s_images
 	char		*player_left;
 	char		*player_right;
 	char		*egg;
+	char		*chimken_img;
 }				t_images;
 
 typedef struct s_path
@@ -63,6 +65,10 @@ typedef struct s_vars
 	int			height;
 	int			move_count;
 	int			collected;
+	int			chimken_x;
+	int			chimken_y;
+	int			chimken_i;
+	int			chimken_j;
 	int			player_x;
 	int			player_y;
 	int			display_x;
@@ -78,7 +84,6 @@ int				validate_map_border(t_vars *vars);
 void			error_exit(const char *message);
 
 void			map_read(t_vars *vars);
-void			map_read_validate(t_vars *vars);
 void			map_read_path(t_vars *vars);
 
 int				map_height(char *map_name);
@@ -93,6 +98,7 @@ void			draw_background(t_vars *vars, int i, int j);
 void			draw_player(t_vars *vars, int i, int j);
 void			draw_exit(t_vars *vars, int i, int j);
 void			draw_egg(t_vars *vars, int i, int j);
+void			draw_chimken(t_vars *vars, int i, int j);
 void			draw_images(t_vars	*vars);
 
 void			move_up(t_vars *vars);
@@ -101,6 +107,9 @@ void			move_left(t_vars *vars);
 void			move_right(t_vars *vars);
 int				player_move(int keycode, t_vars *vars);
 int				press_esc(t_vars *vars);
+
+void			chimken_up(t_vars *vars);
+void			chimken_down(t_vars *vars);
 
 void			check_exit(t_vars *vars);
 void			player_locate(t_vars *vars);
@@ -111,14 +120,14 @@ void			free_double_pointer(char **str);
 void			free_images(t_vars *vars);
 
 void			img_load(t_vars *vars);
-void			img_control(t_vars *vars);
+void			img_control(t_vars *vars, int x, int y);
 
 int				path_finder(int player_y, int player_x, t_vars *vars);
 int				path_up(int player_y, int player_x, t_vars *vars);
 int				path_down(int player_y, int player_x, t_vars *vars);
 int				path_left(int player_y, int player_x, t_vars *vars);
 int				path_right(int player_y, int player_x, t_vars *vars);
-int				validate_path(t_vars *vars);
+int 			validate_path(t_vars *vars);
 
 void			quit(t_vars *vars);
 

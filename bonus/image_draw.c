@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 void	draw_background(t_vars *vars, int i, int j)
 {
@@ -111,10 +111,38 @@ void	draw_exit(t_vars *vars, int i, int j)
 	}
 }
 
+void	draw_chimken(t_vars *vars, int i, int j)
+{
+	int	x;
+	int	y;
+
+	while (vars->map[i])
+	{
+		y = i * IMG_SIZE;
+		j = 0;
+		while (vars->map[i][j] != '\0' && vars->map[i][j] != '\n')
+		{
+			x = j * IMG_SIZE;
+			if (vars->map[i][j] == 'V')
+			{
+				mlx_put_image_to_window(vars->mlx, vars->win,
+										vars->img.chimken_img, x, y);
+				vars->chimken_x = x;
+				vars->chimken_y = y;
+				vars->chimken_i = i;
+				vars->chimken_j = j;
+			}
+			j++;
+		}
+		i++;
+	}
+}
+
 void	draw_images(t_vars	*vars)
 {
 	draw_background(vars, 0, 0);
 	draw_player(vars, 0, 0);
 	draw_egg(vars, 0, 0);
+	draw_chimken(vars, 0, 0);
 	draw_exit(vars, 0, 0);
 }

@@ -10,16 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
-
-void	map_read_validate(t_vars *vars)
-{
-	if (vars->player_y == -1)
-	{
-		ft_putstr_fd("error: invalid map.\n", 2);
-		exit(EXIT_FAILURE);
-	}
-}
+#include "so_long_bonus.h"
 
 void	map_read(t_vars *vars)
 {
@@ -27,7 +18,11 @@ void	map_read(t_vars *vars)
 	int	i;
 
 	vars->player_y = map_height(vars->map_name);
-	map_read_validate(vars);
+	if (vars->player_y == -1)
+	{
+		ft_putstr_fd("error: invalid map.\n", 2);
+		exit(EXIT_FAILURE);
+	}
 	vars->map = malloc(sizeof(char *) * (vars->player_y + 1));
 	if (!vars->map)
 		exit(EXIT_FAILURE);

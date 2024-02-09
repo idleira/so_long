@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 int	path_finder(int display_y, int display_x, t_vars *vars)
 {
@@ -23,29 +23,25 @@ int	path_finder(int display_y, int display_x, t_vars *vars)
 
 int	path_down(int display_y, int display_x, t_vars *vars)
 {
-	if ((vars->map[display_y + 1][display_x] != '1'
-		&& vars->map[display_y + 1][display_x] != 'V')
+	if ((vars->map[display_y + 1][display_x] != '1')
 		&& vars->path.map_copy[display_y + 1][display_x] < 1)
 	{
 		if (vars->map[display_y + 1][display_x] == 'C')
 			vars->path.collectibles++;
-		vars->path.map_copy[display_y + 1][display_x]
-			= vars->path.map_copy[display_y][display_x] + 1;
+		vars->path.map_copy[display_y + 1][display_x] = vars->path.map_copy[display_y][display_x] + 1;
 		path_finder(display_y + 1, display_x, vars);
 	}
-	return (1);
+	return(1);
 }
-
+	
 int	path_up(int display_y, int display_x, t_vars *vars)
 {
-	if ((vars->map[display_y - 1][display_x] != '1'
-		 && vars->map[display_y - 1][display_x] != 'V')
+	if ((vars->map[display_y - 1][display_x] != '1')
 		&& vars->path.map_copy[display_y - 1][display_x] < 1)
 	{
 		if (vars->map[display_y - 1][display_x] == 'C')
 			vars->path.collectibles++;
-		vars->path.map_copy[display_y - 1][display_x]
-			= vars->path.map_copy[display_y][display_x] + 1;
+		vars->path.map_copy[display_y - 1][display_x] = vars->path.map_copy[display_y][display_x] + 1;
 		path_finder(display_y - 1, display_x, vars);
 	}
 	return (1);
@@ -53,14 +49,12 @@ int	path_up(int display_y, int display_x, t_vars *vars)
 
 int	path_right(int display_y, int display_x, t_vars *vars)
 {
-	if ((vars->map[display_y][display_x + 1] != '1'
-		&& vars->map[display_y][display_x + 1] != 'V')
+	if ((vars->map[display_y][display_x + 1] != '1')
 		&& vars->path.map_copy[display_y][display_x + 1] < 1)
 	{
 		if (vars->map[display_y][display_x + 1] == 'C')
 			vars->path.collectibles++;
-		vars->path.map_copy[display_y][display_x + 1]
-			= vars->path.map_copy[display_y][display_x] + 1;
+		vars->path.map_copy[display_y][display_x + 1] = vars->path.map_copy[display_y][display_x] + 1;
 		path_finder(display_y, display_x + 1, vars);
 	}
 	return (1);
@@ -68,14 +62,12 @@ int	path_right(int display_y, int display_x, t_vars *vars)
 
 int	path_left(int display_y, int display_x, t_vars *vars)
 {
-	if ((vars->map[display_y][display_x - 1] != '1'
-		&& vars->map[display_y][display_x - 1] != 'V')
+	if ((vars->map[display_y][display_x - 1] != '1')
 		&& vars->path.map_copy[display_y][display_x - 1] < 1)
 	{
 		if (vars->map[display_y][display_x - 1] == 'C')
 			vars->path.collectibles++;
-		vars->path.map_copy[display_y][display_x - 1]
-			= vars->path.map_copy[display_y][display_x] + 1;
+		vars->path.map_copy[display_y][display_x - 1] = vars->path.map_copy[display_y][display_x] + 1;
 		path_finder(display_y, display_x - 1, vars);
 	}
 	return (1);
