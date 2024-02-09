@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 19:52:20 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:21:57 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,7 @@ void			move_down(t_vars *vars);
 void			move_left(t_vars *vars);
 void			move_right(t_vars *vars);
 int				player_move(int keycode, t_vars *vars);
+int				onscreen_move_counter(t_vars *vars);
 int				press_esc(t_vars *vars);
 
 void			chimken_up(t_vars *vars);

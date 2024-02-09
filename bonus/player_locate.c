@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:46:15 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 17:28:30 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:21:57 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,19 @@ void	player_locate(t_vars *vars)
 		}
 		i++;
 	}
+}
+
+int	onscreen_move_counter(t_vars *vars)
+{
+	char	*count_string;
+	char	*print_string;
+
+	draw_background(vars, vars->height - 1, 0);
+	count_string = ft_itoa(vars->move_count);
+	print_string = ft_strjoin("moves: ", count_string);
+	mlx_string_put(vars->mlx, vars->win, 24,
+		vars->height * 128 - 24, 0xFFFFFF, print_string);
+	free_pointer(count_string);
+	free_pointer(print_string);
+	return (0);
 }

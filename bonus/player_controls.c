@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:05 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 19:52:20 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:24:47 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	player_move(int keycode, t_vars *vars)
 		move_left(vars);
 		check_exit(vars);
 	}
+	onscreen_move_counter(vars);
 	return (1);
 }
 
