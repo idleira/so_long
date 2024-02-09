@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:46:15 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 20:21:57 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:37:43 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@ int	onscreen_move_counter(t_vars *vars)
 	print_string = ft_strjoin("moves: ", count_string);
 	mlx_string_put(vars->mlx, vars->win, 24,
 		vars->height * 128 - 24, 0xFFFFFF, print_string);
+	mlx_string_put(vars->mlx, vars->win, 24,
+		vars->height * 128 - 12,
+		0xFFFFFF, "assets by cup nooble [https://cupnooble.itch.io/]");
 	free_pointer(count_string);
 	free_pointer(print_string);
 	return (0);

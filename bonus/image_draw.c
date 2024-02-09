@@ -126,4 +126,7 @@ void	draw_images(t_vars	*vars)
 	draw_player(vars, 0, 0);
 	draw_egg_exit(vars, 0, 0);
 	draw_chimken(vars, 0, 0);
+	mlx_string_put(vars->mlx, vars->win, 24,
+		vars->height * 128 - 12,
+		0xFFFFFF, "assets by cup nooble [https://cupnooble.itch.io/]");
 }

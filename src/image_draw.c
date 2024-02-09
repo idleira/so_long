@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:15:35 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 17:26:20 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:38:09 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,4 +117,7 @@ void	draw_images(t_vars	*vars)
 	draw_player(vars, 0, 0);
 	draw_egg(vars, 0, 0);
 	draw_exit(vars, 0, 0);
+	mlx_string_put(vars->mlx, vars->win, 24,
+		vars->height * 128 - 12,
+		0xFFFFFF, "assets by cup nooble [https://cupnooble.itch.io/]");
 }
