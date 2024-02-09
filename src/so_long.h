@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 17:11:45 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/09 17:47:49 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,7 @@ int				press_esc(t_vars *vars);
 void			check_exit(t_vars *vars);
 void			player_locate(t_vars *vars);
 
-int				free_map(char **map);
+void			free_map_copy(t_vars *vars);
 void			free_pointer(char *str);
 void			free_double_pointer(char **str);
 void			free_images(t_vars *vars);
@@ -115,8 +115,10 @@ void			img_control(t_vars *vars);
 
 int				path_finder(int player_y, int player_x, t_vars *vars);
 int				path_up(int player_y, int player_x, t_vars *vars);
+int				path_down(int player_y, int player_x, t_vars *vars);
 int				path_left(int player_y, int player_x, t_vars *vars);
 int				path_right(int player_y, int player_x, t_vars *vars);
+int 			validate_path(t_vars *vars);
 
 void			quit(t_vars *vars);
 

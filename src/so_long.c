@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:28 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 17:17:12 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/09 17:27:01 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ int	main(int argc, char **argv)
 	map_read(&vars);
 	validate_map(&vars);
 	count_all(&vars);
-	map_read_path(&vars);
-	path_finder(vars.player_y, vars.player_x, &vars);
 	player_locate(&vars);
+	validate_path(&vars);
 	vars.win = mlx_new_window(vars.mlx, vars.width * IMG_SIZE,
 			vars.height * IMG_SIZE, "so_long");
 	img_load(&vars);

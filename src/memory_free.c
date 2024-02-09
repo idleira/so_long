@@ -12,18 +12,17 @@
 
 #include "so_long.h"
 
-int	free_map(char **map)
+void	free_map_copy(t_vars *vars)
 {
 	int	i;
 
 	i = 0;
-	while (map[i])
+	while (i < vars->height)
 	{
-		free(map[i]);
+		free(vars->path.map_copy[i]);
 		i++;
 	}
-	free(map);
-	return (0);
+	free(vars->path.map_copy);
 }
 
 void	free_pointer(char *str)

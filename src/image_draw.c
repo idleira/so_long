@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:15:35 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 17:08:57 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/09 17:26:20 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,7 @@ void	draw_player(t_vars *vars, int i, int j)
 				mlx_put_image_to_window(vars->mlx, vars->win,
 					vars->img.player_front, x, y);
 				vars->player_x = x;
-				ft_printf("x: %d\n", vars->player_x);
 				vars->player_y = y;
-				ft_printf("y: %d\n", vars->player_y);
 			}
 			j++;
 		}
