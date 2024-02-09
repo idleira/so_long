@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:16:29 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 19:52:20 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:52:22 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,8 @@ void	img_control(t_vars *vars, int x, int y)
 {
 	vars->img.chimken = mlx_xpm_file_to_image(vars->mlx,
 			"./images/chimken.xpm", &x, &y);
+	vars->img.exit_o = mlx_xpm_file_to_image(vars->mlx,
+			"./images/exit_o.xpm", &x, &y);
 	if ((vars->img.floor == NULL || vars->img.wall == NULL)
 		|| (vars->img.player_front == NULL || vars->img.player_back == NULL)
 		|| (vars->img.player_left == NULL || vars->img.player_right == NULL)

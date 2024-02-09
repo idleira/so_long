@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:05 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 17:50:30 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:51:13 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ void	check_exit(t_vars *vars)
 	else if (vars->map[vars->display_x][vars->display_y] == 'E'
 			&& vars->collected != vars->counts.count_eggs)
 	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->img.exit,
+		mlx_put_image_to_window(vars->mlx, vars->win, vars->img.exit_o,
 			vars->player_x, vars->player_y);
-		ft_printf("\nyou have to get all the eggs before you go");
+		ft_printf("\nyou have to collect all the eggs before you go!\n");
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 17:47:49 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:54:22 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ typedef struct s_images
 	char		*floor;
 	char		*wall;
 	char		*exit;
+	char		*exit_o;
 	char		*player_front;
 	char		*player_back;
 	char		*player_left;
@@ -111,7 +112,7 @@ void			free_double_pointer(char **str);
 void			free_images(t_vars *vars);
 
 void			img_load(t_vars *vars);
-void			img_control(t_vars *vars);
+void			img_control(t_vars *vars, int x, int y);
 
 int				path_finder(int player_y, int player_x, t_vars *vars);
 int				path_up(int player_y, int player_x, t_vars *vars);

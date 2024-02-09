@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 20:21:57 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:53:52 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_images
 	char		*floor;
 	char		*wall;
 	char		*exit;
+	char		*exit_o;
 	char		*player_front;
 	char		*player_back;
 	char		*player_left;
