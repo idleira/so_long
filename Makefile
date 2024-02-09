@@ -6,7 +6,7 @@
 #    By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/12 19:31:41 by ibeliaie          #+#    #+#              #
-#    Updated: 2024/02/05 19:28:40 by ibeliaie         ###   ########.fr        #
+#    Updated: 2024/02/09 16:52:32 by ibeliaie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ MLXFLAGS = -L/usr/X11/lib -lX11 -lXext -Llibs/mlx_linux -lmlx -Llibs/libft  -Lli
 SRCS =	src/counts.c				src/map_checks_1.c				src/player_locate.c				\
 		src/image_draw.c			src/map_checks_2.c				src/player_controls.c			\
 		src/image_load.c			src/map_read.c					src/player_controls_util.c		\
-		src/memory_free.c			src/path_find.c					src/so_long.c
+		src/memory_free.c			src/map_read_path.c				src/path_find.c					\
+		src/so_long.c
 
 OBJS = $(SRCS:.c=.o)
 

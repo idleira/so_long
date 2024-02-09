@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:38:32 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/06 20:09:40 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/07 17:17:23 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	validate_map_free(t_vars *vars)
 	if (!tmp)
 	{
 		close(fd);
-		error_exit("wrong or empty map\n");
+		error_exit("empty map\n");
 	}
 	free(tmp);
 	close(fd);

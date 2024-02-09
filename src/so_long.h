@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/05 19:25:41 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/09 17:11:45 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,10 +44,17 @@ typedef struct s_images
 	char		*egg;
 }				t_images;
 
+typedef struct s_path
+{
+	int			collectibles;
+	int			**map_copy;
+}				t_path;
+
 typedef struct s_vars
 {
 	t_counts	counts;
 	t_images	img;
+	t_path		path;
 	char		**map;
 	char		*map_name;
 	void		*mlx;
@@ -72,6 +79,7 @@ int				validate_map_border(t_vars *vars);
 void			error_exit(const char *message);
 
 void			map_read(t_vars *vars);
+void			map_read_path(t_vars *vars);
 
 int				map_height(char *map_name);
 int				map_width(t_vars *vars);
@@ -105,11 +113,10 @@ void			free_images(t_vars *vars);
 void			img_load(t_vars *vars);
 void			img_control(t_vars *vars);
 
-int				path_finder(char **map, int count_eggs, int exit_found);
-char			**copy_map(char **map);
-void			find_start(char **map_copy, int *line_count, int *char_count);
-int				map_flood(char **map_copy, int line_start, int char_start, int *c);
-int				exit_reachable(char **map_copy, int line_start, int char_start, int *e);
+int				path_finder(int player_y, int player_x, t_vars *vars);
+int				path_up(int player_y, int player_x, t_vars *vars);
+int				path_left(int player_y, int player_x, t_vars *vars);
+int				path_right(int player_y, int player_x, t_vars *vars);
 
 void			quit(t_vars *vars);
 
