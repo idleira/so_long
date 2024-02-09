@@ -37,7 +37,7 @@ void	map_read_path(t_vars *vars)
 	vars->path.map_copy[i] = NULL;
 }
 
-int validate_path(t_vars *vars)
+int	validate_path(t_vars *vars)
 {
 	map_read_path(vars);
 	path_finder(vars->display_y, vars->display_x, vars);
@@ -51,5 +51,5 @@ int validate_path(t_vars *vars)
 		ft_printf("impossible to complete the game.\n");
 		exit(0);
 	}
-    return (0);
+	return (0);
 }

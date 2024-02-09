@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:16:29 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/02 16:45:03 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/09 19:52:20 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,13 +40,13 @@ void	img_load(t_vars *vars)
 
 void	img_control(t_vars *vars, int x, int y)
 {
-	vars->img.chimken_img = mlx_xpm_file_to_image(vars->mlx,
+	vars->img.chimken = mlx_xpm_file_to_image(vars->mlx,
 			"./images/chimken.xpm", &x, &y);
 	if ((vars->img.floor == NULL || vars->img.wall == NULL)
 		|| (vars->img.player_front == NULL || vars->img.player_back == NULL)
 		|| (vars->img.player_left == NULL || vars->img.player_right == NULL)
 		|| (vars->img.egg == NULL || vars->img.exit == NULL
-		|| vars->img.chimken_img == NULL))
+			|| vars->img.chimken == NULL))
 	{
 		ft_printf("\033[0;31merror\ninvalid image!\n");
 		free(vars->img.floor);
@@ -56,7 +56,7 @@ void	img_control(t_vars *vars, int x, int y)
 		free(vars->img.player_left);
 		free(vars->img.player_right);
 		free(vars->img.egg);
-		free(vars->img.chimken_img);
+		free(vars->img.chimken);
 		free(vars->img.exit);
 		exit(1);
 	}

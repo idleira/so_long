@@ -39,7 +39,7 @@ int	path_down(int display_y, int display_x, t_vars *vars)
 int	path_up(int display_y, int display_x, t_vars *vars)
 {
 	if ((vars->map[display_y - 1][display_x] != '1'
-		 && vars->map[display_y - 1][display_x] != 'V')
+		&& vars->map[display_y - 1][display_x] != 'V')
 		&& vars->path.map_copy[display_y - 1][display_x] < 1)
 	{
 		if (vars->map[display_y - 1][display_x] == 'C')

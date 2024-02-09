@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   so_long_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 17:47:49 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/09 19:52:20 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ typedef struct s_counts
 	int			count_eggs;
 	int			player_count;
 	int			exit_count;
-	int 		chimken_count;
+	int			chimken_count;
 }				t_counts;
 
 typedef struct s_images
@@ -43,7 +43,7 @@ typedef struct s_images
 	char		*player_left;
 	char		*player_right;
 	char		*egg;
-	char		*chimken_img;
+	char		*chimken;
 }				t_images;
 
 typedef struct s_path
@@ -84,6 +84,7 @@ int				validate_map_border(t_vars *vars);
 void			error_exit(const char *message);
 
 void			map_read(t_vars *vars);
+void			map_read_validate(t_vars *vars);
 void			map_read_path(t_vars *vars);
 
 int				map_height(char *map_name);
@@ -96,8 +97,7 @@ void			count_extra(t_vars *vars);
 
 void			draw_background(t_vars *vars, int i, int j);
 void			draw_player(t_vars *vars, int i, int j);
-void			draw_exit(t_vars *vars, int i, int j);
-void			draw_egg(t_vars *vars, int i, int j);
+void			draw_egg_exit(t_vars *vars, int i, int j);
 void			draw_chimken(t_vars *vars, int i, int j);
 void			draw_images(t_vars	*vars);
 
@@ -127,7 +127,7 @@ int				path_up(int player_y, int player_x, t_vars *vars);
 int				path_down(int player_y, int player_x, t_vars *vars);
 int				path_left(int player_y, int player_x, t_vars *vars);
 int				path_right(int player_y, int player_x, t_vars *vars);
-int 			validate_path(t_vars *vars);
+int				validate_path(t_vars *vars);
 
 void			quit(t_vars *vars);
 

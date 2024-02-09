@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:15:35 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 17:26:20 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/09 19:52:20 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ void	draw_player(t_vars *vars, int i, int j)
 	}
 }
 
-void	draw_egg(t_vars *vars, int i, int j)
+void	draw_egg_exit(t_vars *vars, int i, int j)
 {
 	int	x;
 	int	y;
@@ -82,24 +82,6 @@ void	draw_egg(t_vars *vars, int i, int j)
 				mlx_put_image_to_window(vars->mlx, vars->win,
 					vars->img.egg, x, y);
 			}
-			j++;
-		}
-		i++;
-	}
-}
-
-void	draw_exit(t_vars *vars, int i, int j)
-{
-	int	x;
-	int	y;
-
-	while (vars->map[i])
-	{
-		y = i * IMG_SIZE;
-		j = 0;
-		while (vars->map[i][j] != '\0' && vars->map[i][j] != '\n')
-		{
-			x = j * IMG_SIZE;
 			if (vars->map[i][j] == 'E')
 			{
 				mlx_put_image_to_window(vars->mlx, vars->win,
@@ -126,7 +108,7 @@ void	draw_chimken(t_vars *vars, int i, int j)
 			if (vars->map[i][j] == 'V')
 			{
 				mlx_put_image_to_window(vars->mlx, vars->win,
-										vars->img.chimken_img, x, y);
+					vars->img.chimken, x, y);
 				vars->chimken_x = x;
 				vars->chimken_y = y;
 				vars->chimken_i = i;
@@ -142,7 +124,6 @@ void	draw_images(t_vars	*vars)
 {
 	draw_background(vars, 0, 0);
 	draw_player(vars, 0, 0);
-	draw_egg(vars, 0, 0);
+	draw_egg_exit(vars, 0, 0);
 	draw_chimken(vars, 0, 0);
-	draw_exit(vars, 0, 0);
 }
