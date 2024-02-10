@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:38:32 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/07 17:17:23 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/10 17:35:26 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,37 +18,46 @@ void	error_exit(const char *message)
 	exit(0);
 }
 
-void	validate_map_name(char *map_name)
+void	validate_map_name(t_vars *vars)
 {
 	int	len;
 	int	i;
 
-	len = ft_strlen(map_name);
+	len = ft_strlen(vars->map_name);
 	if (len < 5)
 	{
-		i = ft_strncmp(map_name + len - 4, ".ber", 4);
+		i = ft_strncmp(vars->map_name + len - 4, ".ber", 4);
 		if (i != 0)
+		{
+			mlx_destroy_display(vars->mlx);
+			free(vars->map);
+			free(vars->mlx);
 			error_exit("invalid map file name\n");
+		}
 	}
 }
 
-void	validate_map_components(char **map)
+void	validate_map_components(t_vars *vars)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (map[i])
+	while (vars->map[i])
 	{
 		j = 0;
-		while (map[i][j] != '\0' && map[i][j] != '\n')
+		while (vars->map[i][j] != '\0' && vars->map[i][j] != '\n')
 		{
-			if (map[i][j] == '0' || map[i][j] == '1' || map[i][j] == 'P' ||
-				map[i][j] == 'C' || map[i][j] == 'E')
-					;
+			if (vars->map[i][j] == '0' || vars->map[i][j] == '1' || vars->map[i][j] == 'P' ||
+				vars->map[i][j] == 'C' || vars->map[i][j] == 'E')
+				;
 			else
-				error_exit("invalid map components. \
-							only 0, 1, P, C, E allowed\n");
+			{
+				free_double_pointer(vars->map);
+				mlx_destroy_display(vars->mlx);
+				free(vars->mlx);
+				error_exit("invalid map components.\nonly 0, 1, P, C, E allowed.\n");
+			}
 			j++;
 		}
 		i++;
@@ -77,6 +86,9 @@ void	validate_map_rectangular(t_vars *vars, int i, int j)
 	}
 	if (count != area)
 	{
+		free_double_pointer(vars->map);
+		mlx_destroy_display(vars->mlx);
+		free(vars->mlx);
 		error_exit("map has to be rectangular.\n");
 	}
 }

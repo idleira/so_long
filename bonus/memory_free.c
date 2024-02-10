@@ -55,6 +55,7 @@ void	free_images(t_vars *vars)
 	mlx_destroy_image(vars->mlx, vars->img.floor);
 	mlx_destroy_image(vars->mlx, vars->img.egg);
 	mlx_destroy_image(vars->mlx, vars->img.exit);
+	mlx_destroy_image(vars->mlx, vars->img.exit_o);
 	mlx_destroy_image(vars->mlx, vars->img.player_left);
 	mlx_destroy_image(vars->mlx, vars->img.player_right);
 	mlx_destroy_image(vars->mlx, vars->img.player_front);

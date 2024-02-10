@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:40:23 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 18:40:17 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/10 18:18:43 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ void	map_dimensions(t_vars *vars)
 
 void	validate_map(t_vars *vars)
 {
-	validate_map_name(vars->map_name);
+	validate_map_name(vars);
 	map_dimensions(vars);
-	validate_map_border(vars);
-	validate_map_components(vars->map);
+	validate_map_components(vars);
 	validate_map_rectangular(vars, 0, 0);
+	validate_map_border(vars);
 }

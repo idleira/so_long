@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 20:53:52 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/10 18:33:37 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,15 +77,15 @@ typedef struct s_vars
 }				t_vars;
 
 void			validate_map(t_vars *vars);
-void			validate_map_name(char *map_name);
-void			validate_map_components(char **map);
+void			validate_map_name(t_vars *vars);
+void			validate_map_components(t_vars *vars);
 void			validate_map_rectangular(t_vars *vars, int i, int j);
 int				validate_map_border(t_vars *vars);
 
 void			error_exit(const char *message);
 
 void			map_read(t_vars *vars);
-void			map_read_validate(t_vars *vars);
+void			map_store(t_vars *vars);
 void			map_read_path(t_vars *vars);
 
 int				map_height(char *map_name);
