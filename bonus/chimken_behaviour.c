@@ -6,13 +6,13 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 18:55:53 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/10 19:31:43 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/10 19:53:23 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-void	update_chimken_position(t_vars *vars, int new_i, int new_j, int move_y)
+void	update_position(t_vars *vars, int new_i, int new_j, int move_y)
 {
 	if (vars->map[new_i][new_j] == '1' ||
 		vars->map[new_i][new_j] == 'C' ||
@@ -40,7 +40,7 @@ void	chimken_up(t_vars *vars)
 	int new_j = vars->enemy.chimken_j;
 
 	if (new_i >= 0)
-		update_chimken_position(vars, new_i, new_j, -IMG_SIZE);
+		update_position(vars, new_i, new_j, -IMG_SIZE);
 }
 
 void	chimken_down(t_vars *vars)
@@ -49,7 +49,7 @@ void	chimken_down(t_vars *vars)
 	int new_j = vars->enemy.chimken_j;
 
 	if (new_i < vars->height)
-		update_chimken_position(vars, new_i, new_j, IMG_SIZE);
+		update_position(vars, new_i, new_j, IMG_SIZE);
 }
 
 void	chimken_patrol(t_vars *vars)

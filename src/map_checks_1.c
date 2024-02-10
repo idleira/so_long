@@ -48,15 +48,17 @@ void	validate_map_components(t_vars *vars)
 		j = 0;
 		while (vars->map[i][j] != '\0' && vars->map[i][j] != '\n')
 		{
-			if (vars->map[i][j] == '0' || vars->map[i][j] == '1' || vars->map[i][j] == 'P' ||
-				vars->map[i][j] == 'C' || vars->map[i][j] == 'E')
+			if (vars->map[i][j] == '0' || vars->map[i][j] == '1' ||
+				vars->map[i][j] == 'P' || vars->map[i][j] == 'C' ||
+				vars->map[i][j] == 'E')
 				;
 			else
 			{
 				free_double_pointer(vars->map);
 				mlx_destroy_display(vars->mlx);
 				free(vars->mlx);
-				error_exit("invalid map components.\nonly 0, 1, P, C, E allowed.\n");
+				error_exit("invalid map components.\n"\
+							"only 0, 1, P, C, E allowed.\n");
 			}
 			j++;
 		}
@@ -77,8 +79,8 @@ void	validate_map_rectangular(t_vars *vars, int i, int j)
 		while (vars->map[i][j] != '\0' && vars->map[i][j] != '\n')
 		{
 			if (vars->map[i][j] == '0' || vars->map[i][j] == '1' ||
-				vars->map[i][j] == 'P' || vars->map[i][j] == 'C'
-				|| vars->map[i][j] == 'E')
+				vars->map[i][j] == 'P' || vars->map[i][j] == 'C' ||
+				vars->map[i][j] == 'E')
 				count++;
 			j++;
 		}

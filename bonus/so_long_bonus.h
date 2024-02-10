@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/10 18:33:37 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/10 19:53:23 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,7 @@ int				path_left(int player_y, int player_x, t_vars *vars);
 int				path_right(int player_y, int player_x, t_vars *vars);
 int				validate_path(t_vars *vars);
 
-void			update_chimken_position(t_vars *vars, int new_i, int new_j, int move_y);
+void			update_position(t_vars *vars, int new_i, int new_j, int move_y);
 void			chimken_up(t_vars *vars);
 void			chimken_down(t_vars *vars);
 void			chimken_patrol(t_vars *vars);

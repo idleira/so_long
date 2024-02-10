@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:38:32 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/10 18:31:25 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/10 19:52:33 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,15 +48,17 @@ void	validate_map_components(t_vars *vars)
 		j = 0;
 		while (vars->map[i][j] != '\0' && vars->map[i][j] != '\n')
 		{
-			if (vars->map[i][j] == '0' || vars->map[i][j] == '1' || vars->map[i][j] == 'P' ||
-				vars->map[i][j] == 'C' || vars->map[i][j] == 'E' || vars->map[i][j] == 'V')
+			if (vars->map[i][j] == '0' || vars->map[i][j] == '1' ||
+				vars->map[i][j] == 'P' || vars->map[i][j] == 'C' ||
+				vars->map[i][j] == 'E' || vars->map[i][j] == 'V')
 					;
 			else
 			{
 				free_double_pointer(vars->map);
 				mlx_destroy_display(vars->mlx);
 				free(vars->mlx);
-				error_exit("invalid map components.\nonly 0, 1, P, C, E, V allowed.\n");
+				error_exit("invalid map components.\n"
+					"only 0, 1, P, C, E, V allowed.\n");
 			}
 			j++;
 		}
