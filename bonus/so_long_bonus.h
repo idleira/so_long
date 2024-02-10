@@ -53,11 +53,23 @@ typedef struct s_path
 	int			**map_copy;
 }				t_path;
 
+typedef struct s_enemy
+{
+	int				chimken_x;
+	int				chimken_y;
+	int				chimken_i;
+	int				chimken_j;
+	char			id;
+	int				coords[2];
+	struct s_enemy	*next;
+}					t_enemy;
+
 typedef struct s_vars
 {
 	t_counts	counts;
 	t_images	img;
 	t_path		path;
+	t_enemy		enemy;
 	char		**map;
 	char		*map_name;
 	void		*mlx;
@@ -66,10 +78,6 @@ typedef struct s_vars
 	int			height;
 	int			move_count;
 	int			collected;
-	int			chimken_x;
-	int			chimken_y;
-	int			chimken_i;
-	int			chimken_j;
 	int			player_x;
 	int			player_y;
 	int			display_x;
@@ -112,6 +120,7 @@ int				press_esc(t_vars *vars);
 
 void			chimken_up(t_vars *vars);
 void			chimken_down(t_vars *vars);
+void			chimken_patrol(t_vars *vars);
 
 void			check_exit(t_vars *vars);
 void			player_locate(t_vars *vars);
@@ -130,6 +139,11 @@ int				path_down(int player_y, int player_x, t_vars *vars);
 int				path_left(int player_y, int player_x, t_vars *vars);
 int				path_right(int player_y, int player_x, t_vars *vars);
 int				validate_path(t_vars *vars);
+
+void			update_chimken_position(t_vars *vars, int new_i, int new_j, int move_y);
+void			chimken_up(t_vars *vars);
+void			chimken_down(t_vars *vars);
+void			chimken_patrol(t_vars *vars);
 
 void			quit(t_vars *vars);
 

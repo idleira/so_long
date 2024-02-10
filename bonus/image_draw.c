@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:15:35 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 19:52:20 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/10 19:41:18 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,10 +109,10 @@ void	draw_chimken(t_vars *vars, int i, int j)
 			{
 				mlx_put_image_to_window(vars->mlx, vars->win,
 					vars->img.chimken, x, y);
-				vars->chimken_x = x;
-				vars->chimken_y = y;
-				vars->chimken_i = i;
-				vars->chimken_j = j;
+				vars->enemy.chimken_x = x;
+				vars->enemy.chimken_y = y;
+				vars->enemy.chimken_i = i;
+				vars->enemy.chimken_j = j;
 			}
 			j++;
 		}

@@ -42,7 +42,7 @@ BONUS_SRCS = 	bonus/counts.c				bonus/map_checks_1.c				bonus/player_locate.c			
                 bonus/image_draw.c			bonus/map_checks_2.c				bonus/player_controls.c				\
                 bonus/image_load.c			bonus/map_read.c					bonus/player_controls_util.c		\
                 bonus/memory_free.c			bonus/map_read_path.c				bonus/path_find.c					\
-                bonus/so_long.c
+                bonus/chimken_behaviour.c				bonus/so_long.c
 
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
