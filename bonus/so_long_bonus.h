@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/10 20:24:16 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/11 20:11:07 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,9 +58,9 @@ typedef struct s_enemy
 {
 	int				chimken_x;
 	int				chimken_y;
-	int				chimken_i;
-	int				chimken_j;
-	int 			direction;
+	int				i;
+	int				j;
+	int				direction;
 }					t_enemy;
 
 typedef struct s_vars
@@ -108,6 +108,7 @@ void			draw_background(t_vars *vars, int i, int j);
 void			draw_player(t_vars *vars, int i, int j);
 void			draw_egg_exit(t_vars *vars, int i, int j);
 void			draw_chimken(t_vars *vars, int i, int j);
+void			draw_chimken_direction(t_vars *vars, int x, int y);
 void			draw_images(t_vars	*vars);
 
 void			move_up(t_vars *vars);
@@ -123,6 +124,7 @@ void			chimken_right(t_vars *vars);
 void			chimken_patrol(t_vars *vars);
 
 void			check_exit(t_vars *vars);
+void			check_exit_chimken(t_vars *vars);
 void			player_locate(t_vars *vars);
 
 void			free_map_copy(t_vars *vars);
