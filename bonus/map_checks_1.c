@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:38:32 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/10 18:31:25 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/11 20:27:37 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void	validate_map_components(t_vars *vars)
 				mlx_destroy_display(vars->mlx);
 				free(vars->mlx);
 				error_exit("invalid map components.\n" \
-							"only 0, 1, P, C, E, V allowed.\n");
+					"only 0, 1, P, C, E, V allowed.\n");
 			}
 			j++;
 		}

@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:17:20 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 20:21:57 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/11 18:36:27 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	move_up(t_vars *vars)
 			vars->map[vars->display_x][vars->display_y] = '0';
 			vars->collected++;
 		}
-		ft_printf("\n%d", vars->move_count);
+		ft_printf("\n%d\n", vars->move_count);
 	}
 }
 
@@ -64,7 +64,7 @@ void	move_down(t_vars *vars)
 			vars->map[vars->display_x][vars->display_y] = '0';
 			vars->collected++;
 		}
-		ft_printf("\n%d", vars->move_count);
+		ft_printf("\n%d\n", vars->move_count);
 	}
 }
 
@@ -92,7 +92,7 @@ void	move_right(t_vars *vars)
 			vars->map[vars->display_x][vars->display_y] = '0';
 			vars->collected++;
 		}
-		ft_printf("\n%d", vars->move_count);
+		ft_printf("\n%d\n", vars->move_count);
 	}
 }
 
@@ -120,7 +120,7 @@ void	move_left(t_vars *vars)
 			vars->map[vars->display_x][vars->display_y] = '0';
 			vars->collected++;
 		}
-		ft_printf("\n%d", vars->move_count);
+		ft_printf("\n%d\n", vars->move_count);
 	}
 }
 

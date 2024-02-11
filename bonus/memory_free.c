@@ -60,6 +60,7 @@ void	free_images(t_vars *vars)
 	mlx_destroy_image(vars->mlx, vars->img.player_right);
 	mlx_destroy_image(vars->mlx, vars->img.player_front);
 	mlx_destroy_image(vars->mlx, vars->img.player_back);
-	mlx_destroy_image(vars->mlx, vars->img.chimken);
+	mlx_destroy_image(vars->mlx, vars->img.chimken_r);
+	mlx_destroy_image(vars->mlx, vars->img.chimken_l);
 	mlx_destroy_image(vars->mlx, vars->img.wall);
 }

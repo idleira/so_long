@@ -79,8 +79,8 @@ void	validate_map_rectangular(t_vars *vars, int i, int j)
 		while (vars->map[i][j] != '\0' && vars->map[i][j] != '\n')
 		{
 			if (vars->map[i][j] == '0' || vars->map[i][j] == '1' ||
-				vars->map[i][j] == 'P' || vars->map[i][j] == 'C'
-				|| vars->map[i][j] == 'E')
+				vars->map[i][j] == 'P' || vars->map[i][j] == 'C' ||
+				vars->map[i][j] == 'E')
 				count++;
 			j++;
 		}

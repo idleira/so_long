@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/10 18:33:37 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/11 20:11:07 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ typedef struct s_images
 	char		*player_left;
 	char		*player_right;
 	char		*egg;
-	char		*chimken;
+	char		*chimken_r;
+	char		*chimken_l;
 }				t_images;
 
 typedef struct s_path
@@ -53,11 +54,21 @@ typedef struct s_path
 	int			**map_copy;
 }				t_path;
 
+typedef struct s_enemy
+{
+	int				chimken_x;
+	int				chimken_y;
+	int				i;
+	int				j;
+	int				direction;
+}					t_enemy;
+
 typedef struct s_vars
 {
 	t_counts	counts;
 	t_images	img;
 	t_path		path;
+	t_enemy		enemy;
 	char		**map;
 	char		*map_name;
 	void		*mlx;
@@ -66,10 +77,6 @@ typedef struct s_vars
 	int			height;
 	int			move_count;
 	int			collected;
-	int			chimken_x;
-	int			chimken_y;
-	int			chimken_i;
-	int			chimken_j;
 	int			player_x;
 	int			player_y;
 	int			display_x;
@@ -85,6 +92,7 @@ int				validate_map_border(t_vars *vars);
 void			error_exit(const char *message);
 
 void			map_read(t_vars *vars);
+void			map_print(char **map);
 void			map_store(t_vars *vars);
 void			map_read_path(t_vars *vars);
 
@@ -100,6 +108,7 @@ void			draw_background(t_vars *vars, int i, int j);
 void			draw_player(t_vars *vars, int i, int j);
 void			draw_egg_exit(t_vars *vars, int i, int j);
 void			draw_chimken(t_vars *vars, int i, int j);
+void			draw_chimken_direction(t_vars *vars, int x, int y);
 void			draw_images(t_vars	*vars);
 
 void			move_up(t_vars *vars);
@@ -110,10 +119,12 @@ int				player_move(int keycode, t_vars *vars);
 int				onscreen_move_counter(t_vars *vars);
 int				press_esc(t_vars *vars);
 
-void			chimken_up(t_vars *vars);
-void			chimken_down(t_vars *vars);
+void			chimken_left(t_vars *vars);
+void			chimken_right(t_vars *vars);
+void			chimken_patrol(t_vars *vars);
 
 void			check_exit(t_vars *vars);
+void			check_exit_chimken(t_vars *vars);
 void			player_locate(t_vars *vars);
 
 void			free_map_copy(t_vars *vars);
@@ -130,6 +141,12 @@ int				path_down(int player_y, int player_x, t_vars *vars);
 int				path_left(int player_y, int player_x, t_vars *vars);
 int				path_right(int player_y, int player_x, t_vars *vars);
 int				validate_path(t_vars *vars);
+
+void			update_position(t_vars *vars, int new_i, int new_j, int move_y);
+int				direction(t_vars *vars);
+void			chimken_left(t_vars *vars);
+void			chimken_right(t_vars *vars);
+void			chimken_patrol(t_vars *vars);
 
 void			quit(t_vars *vars);
 

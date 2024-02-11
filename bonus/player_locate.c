@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:46:15 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 20:37:43 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/11 18:31:53 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,4 +50,21 @@ int	onscreen_move_counter(t_vars *vars)
 	free_pointer(count_string);
 	free_pointer(print_string);
 	return (0);
+}
+
+void	map_print(char **map)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+			ft_printf("%c", map[i][j++]);
+		ft_printf("\n");
+		i++;
+	}
+	ft_printf("\n");
 }
