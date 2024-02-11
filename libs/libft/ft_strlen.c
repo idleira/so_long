@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ibeliaie <ibeliaie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 11:18:34 by ibeliaie          #+#    #+#             */
-/*   Updated: 2023/05/23 14:44:00 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/11 18:28:43 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
 /* get string length */
-size_t	ft_strlen(const char *str)
+int	ft_strlen(const char *str)
 {
 	int	i;
 

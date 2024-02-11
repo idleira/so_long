@@ -107,8 +107,12 @@ void	draw_chimken(t_vars *vars, int i, int j)
 			x = j * IMG_SIZE;
 			if (vars->map[i][j] == 'V')
 			{
-				mlx_put_image_to_window(vars->mlx, vars->win,
-					vars->img.chimken, x, y);
+				if (vars->enemy.direction == 0)
+					mlx_put_image_to_window(vars->mlx, vars->win,
+						vars->img.chimken_r, x, y);
+				else if (vars->enemy.direction == 1)
+					mlx_put_image_to_window(vars->mlx, vars->win,
+						vars->img.chimken_l, x, y);
 				vars->enemy.chimken_x = x;
 				vars->enemy.chimken_y = y;
 				vars->enemy.chimken_i = i;

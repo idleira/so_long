@@ -44,7 +44,8 @@ typedef struct s_images
 	char		*player_left;
 	char		*player_right;
 	char		*egg;
-	char		*chimken;
+	char		*chimken_r;
+	char		*chimken_l;
 }				t_images;
 
 typedef struct s_path
@@ -59,9 +60,7 @@ typedef struct s_enemy
 	int				chimken_y;
 	int				chimken_i;
 	int				chimken_j;
-	char			id;
-	int				coords[2];
-	struct s_enemy	*next;
+	int 			direction;
 }					t_enemy;
 
 typedef struct s_vars
@@ -93,6 +92,7 @@ int				validate_map_border(t_vars *vars);
 void			error_exit(const char *message);
 
 void			map_read(t_vars *vars);
+void			map_print(char **map);
 void			map_store(t_vars *vars);
 void			map_read_path(t_vars *vars);
 
@@ -118,8 +118,8 @@ int				player_move(int keycode, t_vars *vars);
 int				onscreen_move_counter(t_vars *vars);
 int				press_esc(t_vars *vars);
 
-void			chimken_up(t_vars *vars);
-void			chimken_down(t_vars *vars);
+void			chimken_left(t_vars *vars);
+void			chimken_right(t_vars *vars);
 void			chimken_patrol(t_vars *vars);
 
 void			check_exit(t_vars *vars);

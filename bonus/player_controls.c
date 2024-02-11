@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:05 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/10 19:10:36 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/11 20:06:42 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	player_move(int keycode, t_vars *vars)
 		check_exit(vars);
 	}
 	chimken_patrol(vars);
+	//map_print(vars->map);
 	onscreen_move_counter(vars);
 	return (1);
 }
@@ -58,8 +59,12 @@ void	check_exit(t_vars *vars)
 {
 	if (vars->map[vars->display_x][vars->display_y] == 'V')
 	{
-		mlx_put_image_to_window(vars->mlx, vars->win, vars->img.chimken,
-			vars->player_x, vars->player_y);
+		if (vars->enemy.direction == 0)
+			mlx_put_image_to_window(vars->mlx, vars->win,
+				vars->img.chimken_r,vars->player_x, vars->player_y);
+		else if (vars->enemy.direction == 1)
+			mlx_put_image_to_window(vars->mlx, vars->win,
+				vars->img.chimken_l,vars->player_x, vars->player_y);
 		ft_printf("\nchickens reclaimed their eggs!\n");
 		quit(vars);
 	}
