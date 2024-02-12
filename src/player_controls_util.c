@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:17:20 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/12 15:39:32 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/12 17:36:07 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ void	move_left(t_vars *vars)
 	}
 }
 
-void	map_print(int **map)
+void	map_print(char **map)
 {
 	int	i;
 	int	j;
@@ -134,7 +134,7 @@ void	map_print(int **map)
 	{
 		j = 0;
 		while (map[i][j])
-			ft_printf("%d", map[i][j++]);
+			ft_printf("%c", map[i][j++]);
 		ft_printf("\n");
 		i++;
 	}

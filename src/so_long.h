@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/10 17:35:15 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/12 19:21:00 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,13 @@ typedef struct s_images
 
 typedef struct s_path
 {
+	char		**map_copy;
 	int			collectibles;
-	int			**map_copy;
+	int 		cells_visited;
+	int 		cells;
+	int 		exit_x;
+	int 		exit_y;
+	int 		exit_reachable;
 }				t_path;
 
 typedef struct s_vars
@@ -79,7 +84,7 @@ int				validate_map_border(t_vars *vars);
 void			error_exit(const char *message);
 
 void			map_read(t_vars *vars);
-void			map_print(int **map);
+void			map_print(char **map);
 void			map_store(t_vars *vars);
 void			map_read_path(t_vars *vars);
 
@@ -115,11 +120,9 @@ void			free_images(t_vars *vars);
 void			img_load(t_vars *vars);
 void			img_control(t_vars *vars, int x, int y);
 
-int				path_finder(int player_y, int player_x, t_vars *vars);
-int				path_up(int player_y, int player_x, t_vars *vars);
-int				path_down(int player_y, int player_x, t_vars *vars);
-int				path_left(int player_y, int player_x, t_vars *vars);
-int				path_right(int player_y, int player_x, t_vars *vars);
+int				path_finder(char **map);
+int				*path_char_locate(char **map, char c, int coords[2]);
+char			**create_path(char **map);
 int				validate_path(t_vars *vars);
 
 void			quit(t_vars *vars);
