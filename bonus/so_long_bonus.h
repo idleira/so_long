@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/11 20:11:07 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/12 15:32:50 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef struct s_images
 typedef struct s_path
 {
 	int			collectibles;
-	int			**map_copy;
+	char		**map_copy;
 }				t_path;
 
 typedef struct s_enemy

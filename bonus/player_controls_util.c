@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:17:20 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/11 18:36:27 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/12 15:30:06 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,9 +124,19 @@ void	move_left(t_vars *vars)
 	}
 }
 
-int	press_esc(t_vars *vars)
+void	map_print(char **map)
 {
-	ft_printf("\n\033[0;35mgame over!\033[0m\n");
-	quit(vars);
-	exit(0);
+	int	i;
+	int	j;
+
+	i = 0;
+	while (map[i])
+	{
+		j = 0;
+		while (map[i][j])
+			ft_printf("%c", map[i][j++]);
+		ft_printf("\n");
+		i++;
+	}
+	ft_printf("\n");
 }

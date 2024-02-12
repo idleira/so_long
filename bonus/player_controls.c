@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:05 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/11 20:06:42 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/12 15:30:20 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,13 @@ void	quit(t_vars *vars)
 	free(vars->mlx);
 	free_double_pointer(vars->map);
 	free_map_copy(vars);
+	exit(0);
+}
+
+int	press_esc(t_vars *vars)
+{
+	ft_printf("\n\033[0;35mgame over!\033[0m\n");
+	quit(vars);
 	exit(0);
 }
 

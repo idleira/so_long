@@ -79,6 +79,7 @@ int				validate_map_border(t_vars *vars);
 void			error_exit(const char *message);
 
 void			map_read(t_vars *vars);
+void			map_print(int **map);
 void			map_store(t_vars *vars);
 void			map_read_path(t_vars *vars);
 
