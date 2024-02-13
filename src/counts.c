@@ -17,7 +17,6 @@ int	count_all(t_vars *vars)
 	vars->counts.count_eggs = 0;
 	vars->counts.player_count = 0;
 	vars->counts.exit_count = 0;
-	vars->path.collectibles = 0;
 	vars->collected = 0;
 	vars->move_count = 0;
 	count_elements(vars, 0, 0);

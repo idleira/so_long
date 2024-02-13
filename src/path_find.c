@@ -6,80 +6,72 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:24 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/12 19:20:27 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/13 18:05:27 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-int	*path_char_locate(char **map, char c, int coords[2])
+int	*path_locate(char **m, char c, int coords[2])
 {
 	int	i;
 	int	j;
 
-	i = 0;
 	coords[0] = 0;
 	coords[1] = 0;
-	while (map[i])
+	i = -1;
+	while (m[++i] != NULL)
 	{
-		j = 0;
-		while (map[i][j])
+		j = -1;
+		while (m[i][++j] != '\0')
 		{
-			if (map[i][j] == c)
+			if (m[i][j] == c)
 			{
 				coords[0] = i;
 				coords[1] = j;
+				return (coords);
 			}
-			j++;
 		}
-		i++;
 	}
-	if (coords[0] == 0 && coords[1] == 0)
-		return (NULL);
-	return (coords);
+	return (NULL);
 }
 
-
-int	path_finder(char **map)
+int path_finder(t_vars *vars)
 {
-	int	coords[2];
-	int	complete;
+	int coords[2];
+	char **m;
 
-	complete = 0;
-	map_print(map);
-	if (!path_char_locate(map, 'P', coords))
+	m = vars->path.map_copy;
+	if (!path_locate(m, 'P', coords))
 		return (1);
-	while (!complete)
+	if ((!path_locate(m, 'E', coords) && !path_locate(m, 'C', coords))
+		|| !path_locate(m, 'P', coords))
 	{
-		if ((!path_char_locate(map, 'E', coords) && !path_char_locate(map, 'C', coords))
-			|| !path_char_locate(map, 'P', coords))
-		{
-			complete = 1;
-			break ;
-		}
-		map = create_path(map);
+		return (1);
 	}
-	if (path_char_locate(map, 'E', coords) || path_char_locate(map, 'C', coords))
+	while (path_locate(m, 'P', coords))
+		m = path_create(m);
+	if (path_locate(m, 'E', coords) || path_locate(m, 'C', coords))
 		return (1);
 	return (0);
 }
 
-char	**create_path(char **map)
+char **path_create(char **m)
 {
-	int	i;
-	int	j;
-	int	coords[2];
+	int i;
+	int j;
+	int coords[2];
 
-	i = path_char_locate(map, 'P', coords)[0];
-	j = path_char_locate(map, 'P', coords)[1];
-	if (map[i][j + 1] != '1' && map[i][j + 1] != 'X' && map[i][j + 1] != 'P')
-		map[i][j + 1] = 'P';
-	if (map[i][j - 1] != '1' && map[i][j - 1] != 'X' && map[i][j - 1] != 'P')
-		map[i][j - 1] = 'P';
-	if (map[i + 1][j] != '1' && map[i + 1][j] != 'X' && map[i + 1][j] != 'P')
-		map[i + 1][j] = 'P';
-	if (map[i - 1][j] != '1' && map[i - 1][j] != 'X' && map[i - 1][j] != 'P')
-		map[i - 1][j] = 'P';
-	map[i][j] = 'X';
-	return (map);
+	i = path_locate(m, 'P', coords)[0];
+	j = path_locate(m, 'P', coords)[1];
+	if (m[i][j + 1] != '1' && m[i][j + 1] != 'X' && m[i][j + 1] != 'P')
+		m[i][j + 1] = 'P';
+	if (m[i][j - 1] != '1' && m[i][j - 1] != 'X' && m[i][j - 1] != 'P')
+		m[i][j - 1] = 'P';
+	if (m[i + 1][j] != '1' && m[i + 1][j] != 'X' && m[i + 1][j] != 'P')
+		m[i + 1][j] = 'P';
+	if (m[i - 1][j] != '1' && m[i - 1][j] != 'X' && m[i - 1][j] != 'P')
+		m[i - 1][j] = 'P';
+	m[i][j] = 'X';
+	return (m);
 }

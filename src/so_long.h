@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/12 19:21:00 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/13 17:45:58 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,12 +48,6 @@ typedef struct s_images
 typedef struct s_path
 {
 	char		**map_copy;
-	int			collectibles;
-	int 		cells_visited;
-	int 		cells;
-	int 		exit_x;
-	int 		exit_y;
-	int 		exit_reachable;
 }				t_path;
 
 typedef struct s_vars
@@ -120,9 +114,9 @@ void			free_images(t_vars *vars);
 void			img_load(t_vars *vars);
 void			img_control(t_vars *vars, int x, int y);
 
-int				path_finder(char **map);
-int				*path_char_locate(char **map, char c, int coords[2]);
-char			**create_path(char **map);
+int				path_finder(t_vars *vars);
+int				*path_locate(char **map, char c, int coords[2]);
+char			**path_create(char **map);
 int				validate_path(t_vars *vars);
 
 void			quit(t_vars *vars);

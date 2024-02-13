@@ -6,13 +6,13 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 18:55:53 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/11 20:11:07 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/13 19:17:46 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-void	draw_chimken_direction(t_vars *vars, int x, int y)
+void	chimken_draw_direction (t_vars *vars, int x, int y)
 {
 	if (vars->enemy.direction == 0)
 		mlx_put_image_to_window(vars->mlx, vars->win,

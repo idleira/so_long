@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:21 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/10 17:42:54 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/13 18:18:43 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	map_read(t_vars *vars)
 		ft_putstr_fd("error: invalid map.\n", 2);
 		exit(EXIT_FAILURE);
 	}
-	vars->map = malloc(sizeof(char *) * (vars->player_y + 1));
+	vars->map = ft_calloc(sizeof(char *), (vars->player_y + 1));
 	if (!vars->map)
 		exit(EXIT_FAILURE);
 	map_store(vars);

@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:08:30 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/12 15:32:50 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/13 19:26:18 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ typedef struct s_images
 
 typedef struct s_path
 {
-	int			collectibles;
 	char		**map_copy;
 }				t_path;
 
@@ -108,7 +107,7 @@ void			draw_background(t_vars *vars, int i, int j);
 void			draw_player(t_vars *vars, int i, int j);
 void			draw_egg_exit(t_vars *vars, int i, int j);
 void			draw_chimken(t_vars *vars, int i, int j);
-void			draw_chimken_direction(t_vars *vars, int x, int y);
+void			chimken_draw_direction (t_vars *vars, int x, int y);
 void			draw_images(t_vars	*vars);
 
 void			move_up(t_vars *vars);
@@ -135,11 +134,9 @@ void			free_images(t_vars *vars);
 void			img_load(t_vars *vars);
 void			img_control(t_vars *vars, int x, int y);
 
-int				path_finder(int player_y, int player_x, t_vars *vars);
-int				path_up(int player_y, int player_x, t_vars *vars);
-int				path_down(int player_y, int player_x, t_vars *vars);
-int				path_left(int player_y, int player_x, t_vars *vars);
-int				path_right(int player_y, int player_x, t_vars *vars);
+int				path_finder(t_vars *vars);
+int				*path_locate(char **map, char c, int coords[2]);
+char			**path_create(char **map);
 int				validate_path(t_vars *vars);
 
 void			update_position(t_vars *vars, int new_i, int new_j, int move_y);

@@ -6,7 +6,7 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:45:25 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 20:47:43 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/13 19:24:41 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int	count_all(t_vars *vars)
 	vars->counts.player_count = 0;
 	vars->counts.chimken_count = 0;
 	vars->counts.exit_count = 0;
-	vars->path.collectibles = 0;
 	vars->collected = 0;
 	vars->move_count = 0;
 	count_elements(vars, 0, 0);

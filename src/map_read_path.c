@@ -22,7 +22,7 @@ void	map_read_path(t_vars *vars)
 	i = 0;
 	while (i < vars->height)
 	{
-		vars->path.map_copy[i] = vars->map[i];
+		vars->path.map_copy[i] = strdup(vars->map[i]);
 		i++;
 	}
 	vars->path.map_copy[i] = NULL;
@@ -31,8 +31,7 @@ void	map_read_path(t_vars *vars)
 int	validate_path(t_vars *vars)
 {
 	map_read_path(vars);
-	path_finder(vars->path.map_copy);
-	if (path_finder(vars->path.map_copy) == 1)
+	if (path_finder(vars) == 1)
 	{
 		mlx_destroy_display(vars->mlx);
 		free(vars->mlx);

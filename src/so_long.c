@@ -28,7 +28,7 @@ int	main(int argc, char **argv)
 	validate_path(&vars);
 	vars.win = mlx_new_window(vars.mlx, vars.width * IMG_SIZE,
 			vars.height * IMG_SIZE, "so_long");
-	img_load(&vars);double
+	img_load(&vars);
 	draw_images(&vars);
 	mlx_hook (vars.win, 17, 0, press_esc, &vars);
 	mlx_hook(vars.win, 2, 1L << 0, player_move, &vars);

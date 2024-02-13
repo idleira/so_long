@@ -6,73 +6,76 @@
 /*   By: ibeliaie <ibeliaie@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 16:07:24 by ibeliaie          #+#    #+#             */
-/*   Updated: 2024/02/09 17:30:57 by ibeliaie         ###   ########.fr       */
+/*   Updated: 2024/02/13 18:31:32 by ibeliaie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long_bonus.h"
 
-int	path_finder(int display_y, int display_x, t_vars *vars)
+int	*path_locate(char **m, char c, int coords[2])
 {
-	path_down(display_y, display_x, vars);
-	path_up(display_y, display_x, vars);
-	path_right(display_y, display_x, vars);
-	path_left(display_y, display_x, vars);
-	return (1);
+	int	i;
+	int	j;
+
+	coords[0] = 0;
+	coords[1] = 0;
+	i = -1;
+	while (m[++i] != NULL)
+	{
+		j = -1;
+		while (m[i][++j] != '\0')
+		{
+			if (m[i][j] == c)
+			{
+				coords[0] = i;
+				coords[1] = j;
+				return (coords);
+			}
+		}
+	}
+	return (NULL);
 }
 
-int	path_down(int display_y, int display_x, t_vars *vars)
+int path_finder(t_vars *vars)
 {
-	if ((vars->map[display_y + 1][display_x] != '1')
-		&& vars->path.map_copy[display_y + 1][display_x] < 1)
+	int coords[2];
+	char **m;
+
+	m = vars->path.map_copy;
+	if (!path_locate(m, 'P', coords))
+		return (1);
+	if ((!path_locate(m, 'E', coords) && !path_locate(m, 'C', coords))
+		|| !path_locate(m, 'P', coords))
 	{
-		if (vars->map[display_y + 1][display_x] == 'C')
-			vars->path.collectibles++;
-		vars->path.map_copy[display_y + 1][display_x]
-			= vars->path.map_copy[display_y][display_x] + 1;
-		path_finder(display_y + 1, display_x, vars);
+		return (1);
 	}
-	return (1);
+	while (path_locate(m, 'P', coords))
+		m = path_create(m);
+	if (path_locate(m, 'E', coords) || path_locate(m, 'C', coords))
+		return (1);
+	return (0);
 }
 
-int	path_up(int display_y, int display_x, t_vars *vars)
+char **path_create(char **m)
 {
-	if ((vars->map[display_y - 1][display_x] != '1')
-		&& vars->path.map_copy[display_y - 1][display_x] < 1)
-	{
-		if (vars->map[display_y - 1][display_x] == 'C')
-			vars->path.collectibles++;
-		vars->path.map_copy[display_y - 1][display_x]
-			= vars->path.map_copy[display_y][display_x] + 1;
-		path_finder(display_y - 1, display_x, vars);
-	}
-	return (1);
-}
+	int i;
+	int j;
+	int coords[2];
 
-int	path_right(int display_y, int display_x, t_vars *vars)
-{
-	if ((vars->map[display_y][display_x + 1] != '1')
-		&& vars->path.map_copy[display_y][display_x + 1] < 1)
-	{
-		if (vars->map[display_y][display_x + 1] == 'C')
-			vars->path.collectibles++;
-		vars->path.map_copy[display_y][display_x + 1]
-			= vars->path.map_copy[display_y][display_x] + 1;
-		path_finder(display_y, display_x + 1, vars);
-	}
-	return (1);
-}
-
-int	path_left(int display_y, int display_x, t_vars *vars)
-{
-	if ((vars->map[display_y][display_x - 1] != '1')
-		&& vars->path.map_copy[display_y][display_x - 1] < 1)
-	{
-		if (vars->map[display_y][display_x - 1] == 'C')
-			vars->path.collectibles++;
-		vars->path.map_copy[display_y][display_x - 1]
-			= vars->path.map_copy[display_y][display_x] + 1;
-		path_finder(display_y, display_x - 1, vars);
-	}
-	return (1);
+	i = path_locate(m, 'P', coords)[0];
+	j = path_locate(m, 'P', coords)[1];
+	if (m[i][j + 1] != '1' && m[i][j + 1] != 'X'
+		&& m[i][j + 1] != 'P' && m[i][j + 1] != 'V')
+		m[i][j + 1] = 'P';
+	if (m[i][j - 1] != '1' && m[i][j - 1] != 'X'
+		&& m[i][j - 1] != 'P' && m[i][j - 1] != 'V')
+		m[i][j - 1] = 'P';
+	if (m[i + 1][j] != '1' && m[i + 1][j] != 'X'
+		&& m[i + 1][j] != 'P' && m[i + 1][j] != 'V')
+		m[i + 1][j] = 'P';
+	if (m[i - 1][j] != '1' && m[i - 1][j] != 'X'
+		&& m[i - 1][j] != 'P' && m[i + 1][j] != 'V')
+		m[i - 1][j] = 'P';
+	m[i][j] = 'X';
+	return (m);
 }
