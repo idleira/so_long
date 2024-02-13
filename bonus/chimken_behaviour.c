@@ -12,7 +12,7 @@
 
 #include "so_long_bonus.h"
 
-void	chimken_draw_direction (t_vars *vars, int x, int y)
+void	chimken_draw_direction(t_vars *vars, int x, int y)
 {
 	if (vars->enemy.direction == 0)
 		mlx_put_image_to_window(vars->mlx, vars->win,

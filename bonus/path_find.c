@@ -36,10 +36,10 @@ int	*path_locate(char **m, char c, int coords[2])
 	return (NULL);
 }
 
-int path_finder(t_vars *vars)
+int	path_finder(t_vars *vars)
 {
-	int coords[2];
-	char **m;
+	int		coords[2];
+	char	**m;
 
 	m = vars->path.map_copy;
 	if (!path_locate(m, 'P', coords))
@@ -56,11 +56,11 @@ int path_finder(t_vars *vars)
 	return (0);
 }
 
-char **path_create(char **m)
+char	**path_create(char **m)
 {
-	int i;
-	int j;
-	int coords[2];
+	int	i;
+	int	j;
+	int	coords[2];
 
 	i = path_locate(m, 'P', coords)[0];
 	j = path_locate(m, 'P', coords)[1];

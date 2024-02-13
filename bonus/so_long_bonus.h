@@ -107,7 +107,7 @@ void			draw_background(t_vars *vars, int i, int j);
 void			draw_player(t_vars *vars, int i, int j);
 void			draw_egg_exit(t_vars *vars, int i, int j);
 void			draw_chimken(t_vars *vars, int i, int j);
-void			chimken_draw_direction (t_vars *vars, int x, int y);
+void			chimken_draw_direction(t_vars *vars, int x, int y);
 void			draw_images(t_vars	*vars);
 
 void			move_up(t_vars *vars);
