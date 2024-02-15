@@ -14,13 +14,13 @@
 
 void	map_read(t_vars *vars)
 {
-	vars->player_y = map_height(vars->map_name);
-	if (vars->player_y == -1)
+	vars->display_y = map_height(vars->map_name);
+	if (vars->display_y == -1)
 	{
 		ft_putstr_fd("error: invalid map.\n", 2);
 		exit(EXIT_FAILURE);
 	}
-	vars->map = ft_calloc(sizeof(char *), (vars->player_y + 1));
+	vars->map = ft_calloc(sizeof(char *), (vars->display_y + 1));
 	if (!vars->map)
 		exit(EXIT_FAILURE);
 	map_store(vars);
@@ -41,7 +41,7 @@ void	map_store(t_vars *vars)
 		ft_putstr_fd("error: no map.\n", 2);
 		exit(1);
 	}
-	while (i < vars->player_y)
+	while (i < vars->display_y)
 	{
 		vars->map[i] = gnl(fd);
 		if (!vars->map[i])

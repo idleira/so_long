@@ -25,8 +25,8 @@ void	player_locate(t_vars *vars)
 		{
 			if (vars->map[i][j] == 'P')
 			{
-				vars->display_x = i;
-				vars->display_y = j;
+				vars->player_x = i;
+				vars->player_y = j;
 			}
 			j++;
 		}

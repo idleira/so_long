@@ -63,10 +63,10 @@ typedef struct s_vars
 	int			height;
 	int			move_count;
 	int			collected;
-	int			player_x;
-	int			player_y;
 	int			display_x;
 	int			display_y;
+	int			player_x;
+	int			player_y;
 }				t_vars;
 
 void			validate_map(t_vars *vars);

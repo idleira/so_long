@@ -56,8 +56,8 @@ void	draw_player(t_vars *vars, int i, int j)
 			{
 				mlx_put_image_to_window(vars->mlx, vars->win,
 					vars->img.player_front, x, y);
-				vars->player_x = x;
-				vars->player_y = y;
+				vars->display_x = x;
+				vars->display_y = y;
 			}
 			j++;
 		}

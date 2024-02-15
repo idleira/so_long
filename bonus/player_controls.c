@@ -64,33 +64,33 @@ int	press_esc(t_vars *vars)
 void	check_exit(t_vars *vars)
 {
 	check_exit_chimken(vars);
-	if (vars->map[vars->display_x][vars->display_y] == 'E'
+	if (vars->map[vars->player_x][vars->player_y] == 'E'
 		&& vars->collected == vars->counts.count_eggs)
 	{
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->img.exit,
-			vars->player_x, vars->player_y);
+			vars->display_x, vars->display_y);
 		ft_printf("\nyou win!\n");
 		quit(vars);
 	}
-	else if (vars->map[vars->display_x][vars->display_y] == 'E'
+	else if (vars->map[vars->player_x][vars->player_y] == 'E'
 			&& vars->collected != vars->counts.count_eggs)
 	{
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->img.exit_o,
-			vars->player_x, vars->player_y);
+			vars->display_x, vars->display_y);
 		ft_printf("\nyou have to get all the eggs before you go");
 	}
 }
 
 void	check_exit_chimken(t_vars *vars)
 {
-	if (vars->map[vars->display_x][vars->display_y] == 'V')
+	if (vars->map[vars->player_x][vars->player_y] == 'V')
 	{
 		if (vars->enemy.direction == 0)
 			mlx_put_image_to_window(vars->mlx, vars->win,
-				vars->img.chimken_r, vars->player_x, vars->player_y);
+				vars->img.chimken_r, vars->display_x, vars->display_y);
 		else if (vars->enemy.direction == 1)
 			mlx_put_image_to_window(vars->mlx, vars->win,
-				vars->img.chimken_l, vars->player_x, vars->player_y);
+				vars->img.chimken_l, vars->display_x, vars->display_y);
 		ft_printf("\nchickens reclaimed their eggs!\n");
 		quit(vars);
 	}

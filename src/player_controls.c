@@ -61,19 +61,19 @@ int	press_esc(t_vars *vars)
 
 void	check_exit(t_vars *vars)
 {
-	if (vars->map[vars->display_x][vars->display_y] == 'E'
+	if (vars->map[vars->player_x][vars->player_y] == 'E'
 		&& vars->collected == vars->counts.count_eggs)
 	{
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->img.exit,
-			vars->player_x, vars->player_y);
+			vars->display_x, vars->display_y);
 		ft_printf("\nyou win!\n");
 		quit(vars);
 	}
-	else if (vars->map[vars->display_x][vars->display_y] == 'E'
+	else if (vars->map[vars->player_x][vars->player_y] == 'E'
 			&& vars->collected != vars->counts.count_eggs)
 	{
 		mlx_put_image_to_window(vars->mlx, vars->win, vars->img.exit_o,
-			vars->player_x, vars->player_y);
+			vars->display_x, vars->display_y);
 		ft_printf("\nyou have to collect all the eggs before you go!\n");
 	}
 }
