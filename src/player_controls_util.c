@@ -123,20 +123,3 @@ void	move_left(t_vars *vars)
 		ft_printf("\n%d\n", vars->move_count);
 	}
 }
-
-void	map_print(char **map)
-{
-	int	i;
-	int	j;
-
-	i = 0;
-	while (map[i])
-	{
-		j = 0;
-		while (map[i][j])
-			ft_printf("%c", map[i][j++]);
-		ft_printf("\n");
-		i++;
-	}
-	ft_printf("\n");
-}

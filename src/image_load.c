@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-void	img_load(t_vars *vars)
+void	images_load(t_vars *vars)
 {
 	int	x;
 	int	y;

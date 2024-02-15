@@ -28,7 +28,7 @@ void	map_read_path(t_vars *vars)
 	vars->path.map_copy[i] = NULL;
 }
 
-int	validate_path(t_vars *vars)
+int	path_validate(t_vars *vars)
 {
 	map_read_path(vars);
 	if (path_finder(vars) == 1)

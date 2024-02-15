@@ -39,7 +39,7 @@ void	map_dimensions(t_vars *vars)
 	vars->height = map_height(vars->map_name);
 }
 
-void	validate_map(t_vars *vars)
+void	map_validate(t_vars *vars)
 {
 	validate_map_name(vars);
 	map_dimensions(vars);

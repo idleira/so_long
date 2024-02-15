@@ -22,14 +22,14 @@ int	main(int argc, char **argv)
 	vars.mlx = mlx_init();
 	vars.map_name = argv[1];
 	map_read(&vars);
-	validate_map(&vars);
+	map_validate(&vars);
 	count_all(&vars);
 	player_locate(&vars);
-	validate_path(&vars);
+	path_validate(&vars);
 	vars.win = mlx_new_window(vars.mlx, vars.width * IMG_SIZE,
 			vars.height * IMG_SIZE, "so_long");
-	img_load(&vars);
-	draw_images(&vars);
+	images_load(&vars);
+	images_draw(&vars);
 	mlx_hook (vars.win, 17, 0, press_esc, &vars);
 	mlx_hook(vars.win, 2, 1L << 0, player_move, &vars);
 	mlx_loop(vars.mlx);

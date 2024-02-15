@@ -69,7 +69,7 @@ typedef struct s_vars
 	int			player_y;
 }				t_vars;
 
-void			validate_map(t_vars *vars);
+void			map_validate(t_vars *vars);
 void			validate_map_name(t_vars *vars);
 void			validate_map_components(t_vars *vars);
 void			validate_map_rectangular(t_vars *vars, int i, int j);
@@ -94,7 +94,7 @@ void			draw_background(t_vars *vars, int i, int j);
 void			draw_player(t_vars *vars, int i, int j);
 void			draw_exit(t_vars *vars, int i, int j);
 void			draw_egg(t_vars *vars, int i, int j);
-void			draw_images(t_vars	*vars);
+void			images_draw(t_vars	*vars);
 
 void			move_up(t_vars *vars);
 void			move_down(t_vars *vars);
@@ -111,13 +111,13 @@ void			free_pointer(char *str);
 void			free_double_pointer(char **str);
 void			free_images(t_vars *vars);
 
-void			img_load(t_vars *vars);
+void			images_load(t_vars *vars);
 void			img_control(t_vars *vars, int x, int y);
 
 int				path_finder(t_vars *vars);
 int				*path_locate(char **map, char c, int coords[2]);
 char			**path_create(char **map);
-int				validate_path(t_vars *vars);
+int				path_validate(t_vars *vars);
 
 void			quit(t_vars *vars);
 

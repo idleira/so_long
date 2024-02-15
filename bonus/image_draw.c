@@ -119,7 +119,7 @@ void	draw_chimken(t_vars *vars, int i, int j)
 	}
 }
 
-void	draw_images(t_vars	*vars)
+void	images_draw(t_vars	*vars)
 {
 	draw_background(vars, 0, 0);
 	draw_player(vars, 0, 0);
