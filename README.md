@@ -7,11 +7,17 @@ we get familiar with mlx and work with textures, sprites, and some other very ba
 the player’s goal is to collect every collectible present on the map, then escape chosing the shortest possible route.
 ![so_long bonus map](map_bonus.gif)
 
+these are some **resources** that helped me:
+
+• [a comprehensive guide to so long](https://reactive.so/post/42-a-comprehensive-guide-to-so_long)
+
+• [exploring so_long game: a dive into 2D game development](https://medium.com/@simonzerisenay/exploring-so-long-game-a-dive-into-2d-game-development-f889f498e416)
+
 ## MiniLibX
 the minilibx is a C library used for rendering graphics, primarily used by 42 students.
 this library is built on top of the X Window System API, to provide a simple programming interface suited for beginners.
 
-these are some resouurces i used, in case you wanna get familiar with it:
+here are some **resources** in case you wanna get familiar with it:
 
 • [42docs - MiniLibX](https://harm-smits.github.io/42docs/libs/minilibx);
 
