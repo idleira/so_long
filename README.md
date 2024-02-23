@@ -36,12 +36,19 @@ i provided some valid and invalid maps in the maps folder, however you're welcom
 the program will run any map as long as it passes all the requirements:
 1. map file has to end with the .ber extension;
 2. the only valid characters are:
+
    ◦ `P` (player);
+   
    ◦ `1` (wall);
+   
    ◦ `0` (empty cell);
+   
    ◦ `C` (collectible);
+   
    ◦ `E` (exit);
+   
    ◦ `V` (enemy in bonus).
+   
 3. there must be ONE exit, ONE player, and at least one collectible on the map;
 4. map must be rectangular, i.e. all rows must have the same length;
 5. map must be closed, i.e. surrounded by walls.
