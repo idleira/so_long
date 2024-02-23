@@ -1,4 +1,4 @@
-# so_long 
+# so_long - @42Wolfsburg
 this was my first graphical project in 42 curriculum. 
 
 ## description
