@@ -23,8 +23,11 @@ these are some resouurces i used, in case you wanna get familiar with it:
 1. clone this repository: `git clone git@github.com:idleira/so_long.git so_long`
 2. all of the following commands should be run in the root of the directory: `cd so_long`;
 3. this project is divided in 2, mandatory and bonus, parts.
+
    • to run **mandatory** (basic character movement and item collecting) part, use `make`;
+   
    • to run **bonus** (on-screen move counter and enemy patrol) part, use `make bonus`.
+   
 4. run the game with a map of your choosing from /maps: `./so_long maps/map1.ber`
 
 ## maps
