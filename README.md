@@ -1,6 +1,8 @@
 # so_long - @42Wolfsburg
 this was my first graphical project in 42 curriculum. 
 
+asset pack used: [Sprout Lands](https://cupnooble.itch.io/sprout-lands-asset-pack) by [Cup Nooble](https://cupnooble.itch.io/) ʕ•́ᴥ•̀ʔっ
+
 ## description
 so_long is a small 2d game, created using the MiniLibX graphics library.
 we get familiar with mlx and work with textures, sprites, and some other very basic gameplay elements.
