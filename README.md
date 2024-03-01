@@ -12,7 +12,9 @@ the player’s goal is to collect every collectible present on the map, then esc
 
 ## 
 
-these are some **resources** that helped me:
+these are some **resources** i used:
+
+• [2d game programming in c tutorial: snake](https://www.thoughtco.com/game-programming-in-c-four-snake-958418)
 
 • [a comprehensive guide to so long](https://reactive.so/post/42-a-comprehensive-guide-to-so_long)
 
