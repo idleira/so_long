@@ -5,9 +5,12 @@ asset pack used: [Sprout Lands](https://cupnooble.itch.io/sprout-lands-asset-pac
 
 ## description
 so_long is a small 2d game, created using the MiniLibX graphics library.
+
 we get familiar with mlx and work with textures, sprites, and some other very basic gameplay elements.
+
 the player’s goal is to collect every collectible present on the map, then escape chosing the shortest possible route.
-![so_long bonus map](map_bonus.gif)
+
+## 
 
 these are some **resources** that helped me:
 
@@ -15,9 +18,16 @@ these are some **resources** that helped me:
 
 • [exploring so_long game: a dive into 2D game development](https://medium.com/@simonzerisenay/exploring-so-long-game-a-dive-into-2d-game-development-f889f498e416)
 
+## 
+
+![so_long bonus map](map_bonus.gif)
+
 ## MiniLibX
 the minilibx is a C library used for rendering graphics, primarily used by 42 students.
+
 this library is built on top of the X Window System API, to provide a simple programming interface suited for beginners.
+
+## 
 
 here are some **resources** in case you wanna get familiar with it:
 
@@ -26,6 +36,8 @@ here are some **resources** in case you wanna get familiar with it:
 • [getting started with the minilibx](https://aurelienbrabant.fr/blog/getting-started-with-the-minilibx);
 
 • [pixel drawing with the minilibx](https://aurelienbrabant.fr/blog/pixel-drawing-with-the-minilibx);
+
+## 
 
 ## how to run so_long
 1. clone this repository: `git clone git@github.com:idleira/so_long.git so_long`
@@ -41,6 +53,7 @@ here are some **resources** in case you wanna get familiar with it:
 ## maps
 ![simple so_long map](map.png)
 i provided some valid and invalid maps in the maps folder, however you're welcome to create your own.
+
 the program will run any map as long as it passes all the requirements:
 1. map file has to end with the .ber extension;
 2. the only valid characters are:
